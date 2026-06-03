@@ -75,6 +75,12 @@ def consolidate(
     model: str,
     seed: int | None = None,
 ) -> Memory:
+    """Merge one trajectory into ``prior_memory`` and return the new memory.
+
+    The single-trajectory primitive behind the Fresh arm (empty prior) and the
+    Cumulative arm (running prior). The model is asked to return the full
+    updated notebook, not a diff.
+    """
     user = (
         "Current notebook:\n"
         f"{prior_memory.render()}\n\n"

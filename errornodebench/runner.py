@@ -39,6 +39,12 @@ from errornodebench.trajectory import generate_trajectory
 
 @dataclass
 class ModelConfig:
+    """Which model backbone fills each of the three roles (solver/consolidator/judge).
+
+    All three default to the same slot; they are issued as independent requests
+    with separate system prompts and no shared context.
+    """
+
     # Defaults route through the local mgpt proxy. See .env.example.
     # Bare mgpt slot names (gpt-5.5 / gpt-5.4 / gpt-5.3-codex /
     # gpt-5.3-codex-spark) are auto-resolved to openai/<name> with
@@ -205,6 +211,11 @@ def run_interference(
     seeds: int = 1,
     progress: ProgressFn = _noop,
 ) -> BenchmarkResult:
+    """Run the full Interference benchmark (all five arms) for ``seeds`` seeds.
+
+    Defaults to the canonical task sequence and family taxonomy. Returns a
+    :class:`BenchmarkResult` aggregating every seed's per-arm scored memory.
+    """
     tasks = tasks or default_sequence()
     families = families or ALL_FAMILIES
     models = models or ModelConfig()

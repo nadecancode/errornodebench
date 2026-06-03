@@ -92,6 +92,12 @@ def judge_entry(
     model: str,
     seed: int | None = None,
 ) -> JudgeVerdict:
+    """Score a single memory entry against the family taxonomy.
+
+    Returns a :class:`JudgeVerdict` with one of the four labels (useful /
+    over_generalized / over_specialized / garbage) and the families the entry
+    would mislead on, if any.
+    """
     user = (
         "Task family taxonomy:\n"
         f"{_render_taxonomy(families)}\n\n"

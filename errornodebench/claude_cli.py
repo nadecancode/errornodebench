@@ -36,6 +36,7 @@ CLAUDE_MODELS = {
 
 
 def is_claude_cli_model(model: str) -> bool:
+    """True if ``model`` is a Claude slot we route through the ``claude -p`` CLI."""
     return model in CLAUDE_MODELS
 
 
@@ -57,6 +58,12 @@ def structured_call_via_cli(
     seed: int | None = None,     # ignored
     timeout_s: int = 600,
 ) -> T:
+    """Structured-output call via the Claude Code CLI (``claude -p --json-schema``).
+
+    Used for the Anthropic backbones so they reuse the caller's OAuth session
+    instead of requiring an API key. ``temperature``/``max_tokens``/``seed`` are
+    accepted for signature parity but the CLI does not expose them.
+    """
     cli_model = CLAUDE_MODELS[_strip_provider_prefix(model)]
     schema = response_model.model_json_schema()
 

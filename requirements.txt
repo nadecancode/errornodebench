@@ -1,0 +1,19 @@
+# ErrorNodeBench — exact dependency versions
+#
+# Tested on Python 3.12.13 (CPython). Python >= 3.10 is required (the code
+# uses PEP 604 `X | None` unions and `list[...]` generics).
+#
+# These are the five direct runtime dependencies; pip resolves the transitive
+# set (openai, httpx, tiktoken, ... pulled in by litellm). The analysis
+# scripts in scripts/ use only the Python standard library, so no extra
+# packages are needed to regenerate the paper's tables and figures.
+#
+#   python -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+#   pip install -e .          # installs the `errornodebench` console script
+
+litellm==1.86.2
+pydantic==2.13.4
+python-dotenv==1.2.2
+click==8.4.1
+rich==15.0.0

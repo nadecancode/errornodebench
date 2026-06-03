@@ -16,6 +16,15 @@ Phase 2 is the interesting one for ErrorNodeBench. It is exactly the kind
 of bulk-rewrite step the Faulty Memory paper identifies as the source of
 interference: the model is asked to look at lessons from heterogeneous tasks
 side-by-side and is implicitly invited to over-generalize across families.
+
+Reference (method adapted, no code copied):
+    Zhao, Huang, Xu, Lin, Liu & Huang (2024), "ExpeL: LLM Agents Are
+    Experiential Learners," AAAI 2024. arXiv:2308.10144.
+
+Adapted for ErrorNodeBench: we re-implement the two-phase insight extraction
+and cross-task refinement only (not ExpeL's task-solving or retrieval loop),
+emit MemoryEntry objects in this benchmark's schema, and run it offline over a
+fixed trajectory pool at temperature 0 with a fixed seed.
 """
 
 from __future__ import annotations

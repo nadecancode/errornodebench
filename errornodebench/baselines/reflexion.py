@@ -14,6 +14,15 @@ So Reflexion should look a lot like Fresh on coverage (full) and like Fresh
 or better on the bad-entry signal (no merging → no over-generalization).
 The main reason to include it is as a calibration point: it's what you get
 when you simply refuse to merge.
+
+Reference (method adapted, no code copied):
+    Shinn, Cassano, Gopinath, Narasimhan & Yao (2023), "Reflexion: Language
+    Agents with Verbal Reinforcement Learning," NeurIPS 2023. arXiv:2303.11366.
+
+Adapted for ErrorNodeBench: we re-implement only the reflection/write step
+(not the full episodic retry loop), emit exactly one MemoryEntry per
+trajectory in this benchmark's schema, and run it offline over a fixed
+trajectory pool at temperature 0 with a fixed seed.
 """
 
 from __future__ import annotations
@@ -48,6 +57,7 @@ class _ReflexionResponse(BaseModel):
 
 
 def reflect(*, trajectory: Trajectory, model: str, seed: int | None = None) -> MemoryEntry:
+    """Produce one self-reflection :class:`MemoryEntry` for a single trajectory."""
     user = (
         "Trajectory to reflect on:\n"
         f"{_render_trajectory(trajectory)}\n\n"

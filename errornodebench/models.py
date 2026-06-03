@@ -26,6 +26,8 @@ class Task(BaseModel):
 
 
 class TrajectoryStep(BaseModel):
+    """One (observation, thought, action, result) tuple in a trajectory."""
+
     observation: str
     thought: str
     action: str
@@ -33,6 +35,8 @@ class TrajectoryStep(BaseModel):
 
 
 class Trajectory(BaseModel):
+    """A solver's full attempt at one task: the task spec plus its steps."""
+
     task: Task
     steps: list[TrajectoryStep]
     final_outcome: str
@@ -53,9 +57,12 @@ class MemoryEntry(BaseModel):
 
 
 class Memory(BaseModel):
+    """The agent's textual notebook: an ordered list of memory entries."""
+
     entries: list[MemoryEntry] = Field(default_factory=list)
 
     def render(self) -> str:
+        """Render the notebook as the plain text shown to the consolidator/judge."""
         if not self.entries:
             return "(empty)"
         chunks = []
@@ -67,6 +74,8 @@ class Memory(BaseModel):
 
 
 class VerdictLabel(str, Enum):
+    """The four mutually exclusive labels the judge can assign to an entry."""
+
     USEFUL = "useful"
     OVER_GENERALIZED = "over_generalized"
     OVER_SPECIALIZED = "over_specialized"
@@ -74,6 +83,8 @@ class VerdictLabel(str, Enum):
 
 
 class JudgeVerdict(BaseModel):
+    """A judge's labelled verdict for one memory entry."""
+
     entry_index: int
     entry: MemoryEntry
     label: VerdictLabel
@@ -104,6 +115,7 @@ class Coverage(BaseModel):
 
     @property
     def family_coverage(self) -> float:
+        """Fraction of input task families with at least one surviving entry."""
         return (
             self.n_families_covered / self.n_families_total
             if self.n_families_total
@@ -112,6 +124,7 @@ class Coverage(BaseModel):
 
     @property
     def task_coverage(self) -> float:
+        """Fraction of input tasks cited by at least one surviving entry."""
         return (
             self.n_tasks_covered / self.n_tasks_total
             if self.n_tasks_total
@@ -125,6 +138,12 @@ def compute_coverage(
     task_sequence: list[str],
     families: dict[str, list[Task]],
 ) -> Coverage:
+    """Measure how much of ``task_sequence`` survived in ``memory``.
+
+    Looks only at honest ``source_task_ids`` attributions: a family/task counts
+    as covered iff some surviving entry cites a task from it. This is what
+    catches the collapse mode where entries look fine but provenance is lost.
+    """
     # Map task_id -> family using the canonical taxonomy.
     task_to_family: dict[str, str] = {}
     for fam, tasks in families.items():
@@ -167,6 +186,7 @@ class ScenarioResult(BaseModel):
 
     @property
     def label_counts(self) -> dict[str, int]:
+        """Number of entries with each verdict label (zero-filled for all four)."""
         counts: dict[str, int] = {label.value: 0 for label in VerdictLabel}
         for v in self.verdicts:
             counts[v.label.value] += 1
@@ -174,6 +194,7 @@ class ScenarioResult(BaseModel):
 
     @property
     def total_entries(self) -> int:
+        """Total number of judged entries in this arm's final memory."""
         return len(self.verdicts)
 
 
@@ -215,6 +236,13 @@ class ArmStats(BaseModel):
 
 
 class BenchmarkResult(BaseModel):
+    """Top-level result for one (scenario, backbone) run across all seeds.
+
+    This is the schema of every released ``runs/*.json`` file; load one with
+    ``BenchmarkResult.model_validate(json.load(...))`` and call
+    :meth:`aggregate` for per-arm statistics.
+    """
+
     scenario: str  # "interference"
     consolidator_model: str
     judge_model: str
@@ -226,6 +254,7 @@ class BenchmarkResult(BaseModel):
         return [getattr(s, arm_name) for s in self.seeds]
 
     def aggregate(self, arm_name: str) -> ArmStats:
+        """Aggregate one arm's per-seed metrics into mean/std :class:`ArmStats`."""
         import statistics
 
         runs = self._arm_runs(arm_name)
@@ -269,9 +298,11 @@ class BenchmarkResult(BaseModel):
 
     @property
     def arm_names(self) -> list[str]:
+        """The five arm keys, in canonical reporting order."""
         return ["fresh", "static_group", "cumulative", "reflexion", "expel"]
 
     def summary(self) -> str:
+        """One-line-per-arm text summary of label means/stds (for CLI logging)."""
         lines = [
             f"Scenario: {self.scenario} "
             f"(consolidator={self.consolidator_model}, "

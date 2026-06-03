@@ -351,6 +351,7 @@ SEQUENCES: dict[str, list[Task]] = {
 
 
 def get_task(task_id: str) -> Task:
+    """Look up a single :class:`Task` by its ``task_id`` (raises KeyError if absent)."""
     for tasks in ALL_FAMILIES.values():
         for t in tasks:
             if t.task_id == task_id:

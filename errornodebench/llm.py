@@ -55,6 +55,12 @@ class LLMConfig:
 
     @classmethod
     def resolve(cls, model: str) -> "LLMConfig":
+        """Turn a model string into a routing config (model + base URL + key).
+
+        Bare or ``openai/``-prefixed mgpt slot names route to ``MGPT_BASE_URL``;
+        every other litellm model string is returned untouched so litellm reads
+        the provider key from the environment.
+        """
         # bare mgpt slot? e.g. "gpt-5.5"
         if model in MGPT_MODELS:
             return cls(

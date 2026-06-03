@@ -20,6 +20,8 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class VLLMTarget:
+    """One Modal-hosted vLLM endpoint: HF model id, default URL, override env var."""
+
     # The litellm-prefixed model id the OpenAI-compatible proxy expects in
     # /v1/chat/completions `model` field. vLLM accepts whatever id you
     # started it with; we keep the full HF repo path for clarity.
@@ -30,9 +32,9 @@ class VLLMTarget:
     env_var: str
 
 
-# Defaults assume the Modal workspace is `nade` and the app name is
-# `errornodebench-vllm` (matching modal_app.py). Override with env vars if
-# your workspace differs.
+# Defaults assume the Modal workspace is `allenzhg` and the app name is
+# `errornodebench-vllm` (matching modal_app.py). Override with env vars
+# (MODAL_WORKSPACE and the per-model VLLM_*_URL) if your deployment differs.
 _DEFAULT_WORKSPACE = os.environ.get("MODAL_WORKSPACE", "allenzhg")
 _BASE = f"https://{_DEFAULT_WORKSPACE}--errornodebench-vllm"
 
@@ -63,6 +65,7 @@ VLLM_ENDPOINTS: dict[str, VLLMTarget] = {
 
 
 def is_vllm_model(model: str) -> bool:
+    """True if ``model`` is a ``vllm-*`` slot served by a Modal vLLM endpoint."""
     return model in VLLM_ENDPOINTS
 
 
