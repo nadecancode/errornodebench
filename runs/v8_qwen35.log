@@ -1,0 +1,95 @@
+[92m19:57:39 - LiteLLM:WARNING[0m: common_utils.py:979 - litellm: could not pre-load bedrock-runtime response stream shape — Bedrock event-stream decoding will be unavailable. Error: No module named 'botocore'
+[92m19:57:39 - LiteLLM:WARNING[0m: common_utils.py:24 - litellm: could not pre-load sagemaker-runtime response stream shape — SageMaker event-stream decoding will be unavailable. Error: No module named 'botocore'
+[19:57:40] === seed 1/3 ===                                           cli.py:177
+            15 tasks in parallel                                      cli.py:177
+Traceback (most recent call last):
+  File "/home/nade/workspaces/external/stanford/cs321m/project/errornodebench/llm.py", line 255, in structured_call
+    raise inner
+  File "/home/nade/workspaces/external/stanford/cs321m/project/errornodebench/llm.py", line 248, in structured_call
+    return response_model.model_validate(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nade/workspaces/external/stanford/cs321m/project/.venv/lib/python3.12/site-packages/pydantic/main.py", line 732, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 3 validation errors for _SolverResponse
+steps
+  Field required [type=missing, input_value={'observation': 'I am in ...er, ready for heating.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+final_outcome
+  Field required [type=missing, input_value={'observation': 'I am in ...er, ready for heating.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+success
+  Field required [type=missing, input_value={'observation': 'I am in ...er, ready for heating.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/nade/workspaces/external/stanford/cs321m/project/errornodebench/cli.py", line 186, in <module>
+    main()
+  File "/home/nade/workspaces/external/stanford/cs321m/project/.venv/lib/python3.12/site-packages/click/core.py", line 1524, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nade/workspaces/external/stanford/cs321m/project/.venv/lib/python3.12/site-packages/click/core.py", line 1445, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/home/nade/workspaces/external/stanford/cs321m/project/.venv/lib/python3.12/site-packages/click/core.py", line 1912, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nade/workspaces/external/stanford/cs321m/project/.venv/lib/python3.12/site-packages/click/core.py", line 1308, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nade/workspaces/external/stanford/cs321m/project/.venv/lib/python3.12/site-packages/click/core.py", line 877, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nade/workspaces/external/stanford/cs321m/project/errornodebench/cli.py", line 173, in interference
+    result = run_interference(
+             ^^^^^^^^^^^^^^^^^
+  File "/home/nade/workspaces/external/stanford/cs321m/project/errornodebench/runner.py", line 216, in run_interference
+    _run_one_seed(
+  File "/home/nade/workspaces/external/stanford/cs321m/project/errornodebench/runner.py", line 84, in _run_one_seed
+    trajectories: list[Trajectory] = parallel_map(
+                                     ^^^^^^^^^^^^^
+  File "/home/nade/workspaces/external/stanford/cs321m/project/errornodebench/concurrency.py", line 39, in parallel_map
+    return list(ex.map(fn, items_list))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nade/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nade/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/nade/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/nade/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/nade/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nade/workspaces/external/stanford/cs321m/project/errornodebench/runner.py", line 80, in _solve
+    traj = generate_trajectory(t, model=models.solver, seed=seed)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nade/workspaces/external/stanford/cs321m/project/errornodebench/trajectory.py", line 48, in generate_trajectory
+    resp = structured_call(
+           ^^^^^^^^^^^^^^^^
+  File "/home/nade/workspaces/external/stanford/cs321m/project/errornodebench/llm.py", line 259, in structured_call
+    raise RuntimeError(
+RuntimeError: structured_call failed after 2 attempts. Last error: ValidationError: 3 validation errors for _SolverResponse
+steps
+  Field required [type=missing, input_value={'observation': 'I am in ...er, ready for heating.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+final_outcome
+  Field required [type=missing, input_value={'observation': 'I am in ...er, ready for heating.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+success
+  Field required [type=missing, input_value={'observation': 'I am in ...er, ready for heating.'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+Last raw: {
+  "observation": "I am in a kitchen with a stove, saucepan, freezer, mixing bowl, and a cold stick of butter. The goal is to melt the butter into liquid.",
+  "thought": "To melt butter, I need to apply heat. The stove and saucepan are the appropriate tools for this. I should first place the saucepan on the stove.",
+  "action": "Place the saucepan on the stove burner.",
+  "result": "The saucepan is now sitting on the stove burner, ready for heating."
+}

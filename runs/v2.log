@@ -1,0 +1,71 @@
+[92m14:43:14 - LiteLLM:WARNING[0m: common_utils.py:979 - litellm: could not pre-load bedrock-runtime response stream shape — Bedrock event-stream decoding will be unavailable. Error: No module named 'botocore'
+[92m14:43:14 - LiteLLM:WARNING[0m: common_utils.py:24 - litellm: could not pre-load sagemaker-runtime response stream shape — SageMaker event-stream decoding will be unavailable. Error: No module named 'botocore'
+[14:43:14] === seed 1/1 ===                                           cli.py:134
+            heat-melt-01                                              cli.py:134
+[14:43:21]  heat-boil-01                                              cli.py:134
+[14:43:27]  heat-cook-01                                              cli.py:134
+[14:43:35]  cool-01                                                   cli.py:134
+[14:43:42]  mix-01                                                    cli.py:134
+[14:43:51]  heat-melt-02                                              cli.py:134
+[14:43:59]  heat-boil-02                                              cli.py:134
+[14:44:07]  heat-cook-02                                              cli.py:134
+[14:44:15]  cool-02                                                   cli.py:134
+[14:44:21]  mix-02                                                    cli.py:134
+[14:44:29]  heat-melt-03                                              cli.py:134
+[14:44:38]  heat-boil-03                                              cli.py:134
+[14:44:48]  heat-cook-03                                              cli.py:134
+[14:44:57]  cool-03                                                   cli.py:134
+[14:45:03]  mix-03                                                    cli.py:134
+[14:45:12]  heat-melt-01                                              cli.py:134
+[14:45:14]  heat-boil-01                                              cli.py:134
+[14:45:17]  heat-cook-01                                              cli.py:134
+[14:45:21]  cool-01                                                   cli.py:134
+[14:45:23]  mix-01                                                    cli.py:134
+[14:45:32]  heat-melt-02                                              cli.py:134
+[14:45:35]  heat-boil-02                                              cli.py:134
+[14:45:38]  heat-cook-02                                              cli.py:134
+[14:45:41]  cool-02                                                   cli.py:134
+[14:45:44]  mix-02                                                    cli.py:134
+[14:45:46]  heat-melt-03                                              cli.py:134
+[14:45:49]  heat-boil-03                                              cli.py:134
+[14:45:53]  heat-cook-03                                              cli.py:134
+[14:45:56]  cool-03                                                   cli.py:134
+[14:45:59]  mix-03                                                    cli.py:134
+[14:46:02]  family=heat-melt (3 trajectories)                         cli.py:134
+[14:46:09]  family=heat-boil (3 trajectories)                         cli.py:134
+[14:46:15]  family=heat-cook (3 trajectories)                         cli.py:134
+[14:46:23]  family=cool (3 trajectories)                              cli.py:134
+[14:46:28]  family=mix (3 trajectories)                               cli.py:134
+[14:46:39]  heat-melt-01                                              cli.py:134
+[14:46:42]  heat-boil-01                                              cli.py:134
+[14:46:46]  heat-cook-01                                              cli.py:134
+[14:46:51]  cool-01                                                   cli.py:134
+[14:46:56]  mix-01                                                    cli.py:134
+[14:47:00]  heat-melt-02                                              cli.py:134
+[14:47:05]  heat-boil-02                                              cli.py:134
+[14:47:10]  heat-cook-02                                              cli.py:134
+[14:47:19]  cool-02                                                   cli.py:134
+[14:47:24]  mix-02                                                    cli.py:134
+[14:47:29]  heat-melt-03                                              cli.py:134
+[14:47:34]  heat-boil-03                                              cli.py:134
+[14:47:41]  heat-cook-03                                              cli.py:134
+[14:47:48]  cool-03                                                   cli.py:134
+[14:47:53]  mix-03                                                    cli.py:134
+[14:47:58]  15 entries                                                cli.py:134
+[14:49:47]  16 entries                                                cli.py:134
+[14:51:24]  1 entries                                                 cli.py:134
+  ErrorNodeBench — interference (consolidator=gpt-5.5, judge=gpt-5.5, seeds=1)  
+┏━━━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━┓
+┃ Arm          ┃  Entries ┃   useful ┃ over_general… ┃ over_special… ┃ garbage ┃
+┡━━━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━┩
+│ fresh        │ 15.0±0.0 │  7.0±0.0 │       0.0±0.0 │       8.0±0.0 │ 0.0±0.0 │
+│ static_group │ 16.0±0.0 │ 12.0±0.0 │       0.0±0.0 │       4.0±0.0 │ 0.0±0.0 │
+│ cumulative   │  1.0±0.0 │  1.0±0.0 │       0.0±0.0 │       0.0±0.0 │ 0.0±0.0 │
+└──────────────┴──────────┴──────────┴───────────────┴───────────────┴─────────┘
+
+Interference signal (over_generalized + garbage, mean entries per run):
+          fresh: 0.00
+   static_group: 0.00
+     cumulative: 0.00
+
+Saved full result to runs/v2.json

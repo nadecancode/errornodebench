@@ -1,0 +1,262 @@
+{
+  "scenario": "interference",
+  "fresh": {
+    "arm": "fresh",
+    "consolidator_model": "gpt-5.5",
+    "judge_model": "gpt-5.5",
+    "final_memory": {
+      "entries": [
+        {
+          "when_to_use": "When a solid, meltable food item such as butter must be turned into liquid and a stove with a heat-safe pan or saucepan is available.",
+          "strategy": "Place the solid item in the saucepan, put the saucepan securely on the stove burner, turn the burner to low heat to avoid burning, and wait until the item melts into liquid.",
+          "source_task_ids": [
+            "heat-01"
+          ]
+        },
+        {
+          "when_to_use": "When the goal is to bring a pot of water from cold or calm to a rolling boil using a stove.",
+          "strategy": "Place the pot securely on a stove burner, turn the burner to high heat, and wait while monitoring the water. Continue heating past the small-bubble stage until large bubbles rapidly and continuously break across the entire surface; a thermometer reading near 100\u00b0C can confirm boiling. Keep heating briefly if needed to maintain the rolling boil.",
+          "source_task_ids": [
+            "heat-02"
+          ]
+        },
+        {
+          "when_to_use": "When the goal is to freeze liquid water in a kitchen that has a freezer and an ice tray or similar shallow mold.",
+          "strategy": "Pour the water into the ice tray compartments, place the filled tray flat in the freezer, close the freezer door, wait several hours, then check that the water has frozen solid.",
+          "source_task_ids": [
+            "cool-01"
+          ]
+        },
+        {
+          "when_to_use": "When combining flour, salt, and water into a uniform dough using a bowl and spoon.",
+          "strategy": "Add flour to the bowl, add salt, and stir the dry ingredients first to distribute the salt evenly. Then add water and stir firmly, continuing to fold and mix until no dry streaks remain and the dough is cohesive and uniform.",
+          "source_task_ids": [
+            "mix-01"
+          ]
+        },
+        {
+          "when_to_use": "When the goal is to fully dissolve sugar in room-temperature water and a stirring tool is available.",
+          "strategy": "Open the sugar packet, pour the sugar into the water, then stir with the stirring tool. If visible granules remain at the bottom, continue stirring until the water appears clear and no granules are visible; heating is not necessary if continued stirring works.",
+          "source_task_ids": [
+            "dissolve-01"
+          ]
+        },
+        {
+          "when_to_use": "When the goal is to recover dry dissolved salt from saltwater and a heat source plus a shallow pan are available.",
+          "strategy": "Pour the saltwater into the shallow pan to spread it thin, place it on the stove, heat until the visible water evaporates, then reduce to low heat briefly to drive off remaining moisture. Turn off the heat once dry salt crystals remain.",
+          "source_task_ids": [
+            "evap-01"
+          ]
+        }
+      ]
+    },
+    "verdicts": [
+      {
+        "entry_index": 0,
+        "entry": {
+          "when_to_use": "When a solid, meltable food item such as butter must be turned into liquid and a stove with a heat-safe pan or saucepan is available.",
+          "strategy": "Place the solid item in the saucepan, put the saucepan securely on the stove burner, turn the burner to low heat to avoid burning, and wait until the item melts into liquid.",
+          "source_task_ids": [
+            "heat-01"
+          ]
+        },
+        "label": "useful",
+        "reasoning": "The entry is correctly bounded to the heat family for solid-to-liquid melting of a meltable food item using a stove and heat-safe pan. It would not plausibly trigger for cooling, mixing, dissolving, or evaporation-based separation tasks because it specifically requires a solid meltable food to be turned into liquid.",
+        "affected_families": []
+      },
+      {
+        "entry_index": 1,
+        "entry": {
+          "when_to_use": "When the goal is to bring a pot of water from cold or calm to a rolling boil using a stove.",
+          "strategy": "Place the pot securely on a stove burner, turn the burner to high heat, and wait while monitoring the water. Continue heating past the small-bubble stage until large bubbles rapidly and continuously break across the entire surface; a thermometer reading near 100\u00b0C can confirm boiling. Keep heating briefly if needed to maintain the rolling boil.",
+          "source_task_ids": [
+            "heat-02"
+          ]
+        },
+        "label": "over_specialized",
+        "reasoning": "The strategy is correct for the heat family boiling-water task and is safely bounded, but the when_to_use is limited to the exact seen scenario: a pot of water brought to a rolling boil on a stove. It would not fire for plausible close variants in the same heat family, such as boiling another liquid, using a kettle, melting butter, or cooking food.",
+        "affected_families": []
+      },
+      {
+        "entry_index": 2,
+        "entry": {
+          "when_to_use": "When the goal is to freeze liquid water in a kitchen that has a freezer and an ice tray or similar shallow mold.",
+          "strategy": "Pour the water into the ice tray compartments, place the filled tray flat in the freezer, close the freezer door, wait several hours, then check that the water has frozen solid.",
+          "source_task_ids": [
+            "cool-01"
+          ]
+        },
+        "label": "useful",
+        "reasoning": "The entry is correctly bounded to a cooling/freezing task: freezing liquid water using a freezer and ice tray or similar mold. The strategy matches the cool family and would not plausibly trigger for heat, mix, dissolve, or evaporate tasks.",
+        "affected_families": []
+      },
+      {
+        "entry_index": 3,
+        "entry": {
+          "when_to_use": "When combining flour, salt, and water into a uniform dough using a bowl and spoon.",
+          "strategy": "Add flour to the bowl, add salt, and stir the dry ingredients first to distribute the salt evenly. Then add water and stir firmly, continuing to fold and mix until no dry streaks remain and the dough is cohesive and uniform.",
+          "source_task_ids": [
+            "mix-01"
+          ]
+        },
+        "label": "over_specialized",
+        "reasoning": "The strategy is correct for the mix family, specifically making flour-salt-water dough. However, the when_to_use is narrowly tied to the exact ingredients and tools from the observed task, so it would not fire for close variants in the same family such as other doughs, batters, or smoothies that also require combining ingredients into a uniform mixture.",
+        "affected_families": []
+      },
+      {
+        "entry_index": 4,
+        "entry": {
+          "when_to_use": "When the goal is to fully dissolve sugar in room-temperature water and a stirring tool is available.",
+          "strategy": "Open the sugar packet, pour the sugar into the water, then stir with the stirring tool. If visible granules remain at the bottom, continue stirring until the water appears clear and no granules are visible; heating is not necessary if continued stirring works.",
+          "source_task_ids": [
+            "dissolve-01"
+          ]
+        },
+        "label": "over_specialized",
+        "reasoning": "The strategy is correct for the dissolve family, but the when_to_use is limited to the exact seen instance of dissolving sugar in room-temperature water. It would not fire for close dissolve variants such as dissolving salt or another solute in water, despite the same family strategy applying.",
+        "affected_families": []
+      },
+      {
+        "entry_index": 5,
+        "entry": {
+          "when_to_use": "When the goal is to recover dry dissolved salt from saltwater and a heat source plus a shallow pan are available.",
+          "strategy": "Pour the saltwater into the shallow pan to spread it thin, place it on the stove, heat until the visible water evaporates, then reduce to low heat briefly to drive off remaining moisture. Turn off the heat once dry salt crystals remain.",
+          "source_task_ids": [
+            "evap-01"
+          ]
+        },
+        "label": "over_specialized",
+        "reasoning": "The strategy is correct for the evaporate family and would not mislead on other families, but the when_to_use is limited to the exact saltwater-to-dry-salt task rather than plausible close variants of evaporation-based separation involving other non-volatile solutes or solutions.",
+        "affected_families": []
+      }
+    ],
+    "task_sequence": [
+      "heat-01",
+      "heat-02",
+      "cool-01",
+      "mix-01",
+      "dissolve-01",
+      "evap-01"
+    ]
+  },
+  "cumulative": {
+    "arm": "cumulative",
+    "consolidator_model": "gpt-5.5",
+    "judge_model": "gpt-5.5",
+    "final_memory": {
+      "entries": [
+        {
+          "when_to_use": "When a solid ingredient such as butter needs to be melted and a stove with a heat-safe pan is available.",
+          "strategy": "Place the solid ingredient in a saucepan or other heat-safe pan, put the pan on the stove burner, turn the burner to low heat, and wait briefly until the ingredient melts into liquid. Use low heat to avoid burning.",
+          "source_task_ids": []
+        },
+        {
+          "when_to_use": "When a pot of water needs to be brought to a rolling boil and a stove is available.",
+          "strategy": "Place the pot of water securely on a stove burner, turn the burner to high heat, and wait while it heats. Continue heating past the first small bubbles until large bubbles rapidly and continuously break across the entire surface, with steam rising. If available, use a thermometer to confirm the water is about 100\u00b0C, then keep it on high briefly to maintain the rolling boil.",
+          "source_task_ids": []
+        },
+        {
+          "when_to_use": "When liquid water needs to be frozen solid and a freezer plus a suitable container such as an ice tray are available.",
+          "strategy": "Pour the water into the ice tray or other freezer-safe container, keeping it level to avoid spills. Place the filled container flat inside the freezer, close the freezer door, and wait several hours until the water is completely solid. Check that the water has frozen into ice before considering the task complete.",
+          "source_task_ids": []
+        },
+        {
+          "when_to_use": "When flour, water, and salt need to be combined into a uniform dough and a mixing bowl plus stirring utensil are available.",
+          "strategy": "Put the flour in the mixing bowl, add the salt, and stir the dry ingredients first so the salt is evenly dispersed. Pour in the water, then stir firmly to hydrate the flour and bring the mixture together. Continue stirring and folding until the dough is cohesive and no dry streaks remain.",
+          "source_task_ids": []
+        },
+        {
+          "when_to_use": "When granulated sugar needs to be fully dissolved into a glass or other container of room-temperature water and a stirring utensil is available.",
+          "strategy": "Open the sugar packet carefully, pour the sugar into the water, and stir with the stirring utensil. If granules remain visible at the bottom, continue stirring until the liquid appears clear and no sugar crystals are visible. Heat is not necessary if continued stirring fully dissolves the sugar.",
+          "source_task_ids": []
+        },
+        {
+          "when_to_use": "When dry dissolved salt needs to be recovered from saltwater and a stove with a heat-safe shallow pan is available.",
+          "strategy": "Pour the saltwater into the shallow pan so it spreads in a thin layer. Place the pan level on the stove and heat on medium-high until the water steams and gently boils away. Continue heating until no visible liquid remains, then reduce to low heat briefly to drive off remaining moisture without scattering or overheating the salt. Turn off the stove once dry salt crystals remain.",
+          "source_task_ids": [
+            "evap-01"
+          ]
+        }
+      ]
+    },
+    "verdicts": [
+      {
+        "entry_index": 0,
+        "entry": {
+          "when_to_use": "When a solid ingredient such as butter needs to be melted and a stove with a heat-safe pan is available.",
+          "strategy": "Place the solid ingredient in a saucepan or other heat-safe pan, put the pan on the stove burner, turn the burner to low heat, and wait briefly until the ingredient melts into liquid. Use low heat to avoid burning.",
+          "source_task_ids": []
+        },
+        "label": "useful",
+        "reasoning": "The entry is correctly scoped to melting a solid ingredient using low heat in a heat-safe pan, which matches the heat family\u2019s solid-to-liquid melting condition. It would not plausibly trigger for cooling, mixing, dissolving, or evaporation-based separation tasks because it specifically requires a solid ingredient needing to be melted.",
+        "affected_families": []
+      },
+      {
+        "entry_index": 1,
+        "entry": {
+          "when_to_use": "When a pot of water needs to be brought to a rolling boil and a stove is available.",
+          "strategy": "Place the pot of water securely on a stove burner, turn the burner to high heat, and wait while it heats. Continue heating past the first small bubbles until large bubbles rapidly and continuously break across the entire surface, with steam rising. If available, use a thermometer to confirm the water is about 100\u00b0C, then keep it on high briefly to maintain the rolling boil.",
+          "source_task_ids": []
+        },
+        "label": "useful",
+        "reasoning": "The entry is correctly bounded to a heat-family boiling task: bringing water to a rolling boil using a stove. The strategy is appropriate and would not plausibly trigger for cooling, mixing, dissolving, or evaporation-based separation tasks.",
+        "affected_families": []
+      },
+      {
+        "entry_index": 2,
+        "entry": {
+          "when_to_use": "When liquid water needs to be frozen solid and a freezer plus a suitable container such as an ice tray are available.",
+          "strategy": "Pour the water into the ice tray or other freezer-safe container, keeping it level to avoid spills. Place the filled container flat inside the freezer, close the freezer door, and wait several hours until the water is completely solid. Check that the water has frozen into ice before considering the task complete.",
+          "source_task_ids": []
+        },
+        "label": "useful",
+        "reasoning": "The entry is correctly bounded to freezing liquid water solid using a freezer and suitable container, which is a specific case within the cool family. It would not plausibly trigger for heat, mix, dissolve, or evaporate tasks because it explicitly requires liquid water needing to be frozen solid.",
+        "affected_families": []
+      },
+      {
+        "entry_index": 3,
+        "entry": {
+          "when_to_use": "When flour, water, and salt need to be combined into a uniform dough and a mixing bowl plus stirring utensil are available.",
+          "strategy": "Put the flour in the mixing bowl, add the salt, and stir the dry ingredients first so the salt is evenly dispersed. Pour in the water, then stir firmly to hydrate the flour and bring the mixture together. Continue stirring and folding until the dough is cohesive and no dry streaks remain.",
+          "source_task_ids": []
+        },
+        "label": "useful",
+        "reasoning": "The entry correctly describes the mix family strategy for combining flour, water, and salt into a uniform dough using a bowl and stirring utensil. Its applicability is narrowly bounded to that specific mixing goal and would not plausibly trigger for heat, cool, dissolve, or evaporate tasks.",
+        "affected_families": []
+      },
+      {
+        "entry_index": 4,
+        "entry": {
+          "when_to_use": "When granulated sugar needs to be fully dissolved into a glass or other container of room-temperature water and a stirring utensil is available.",
+          "strategy": "Open the sugar packet carefully, pour the sugar into the water, and stir with the stirring utensil. If granules remain visible at the bottom, continue stirring until the liquid appears clear and no sugar crystals are visible. Heat is not necessary if continued stirring fully dissolves the sugar.",
+          "source_task_ids": []
+        },
+        "label": "over_specialized",
+        "reasoning": "The strategy is correct for the dissolve family, but the when_to_use is narrowly limited to granulated sugar in room-temperature water, essentially the example instance. It would not fire for close dissolve variants such as dissolving salt or another solute in water.",
+        "affected_families": []
+      },
+      {
+        "entry_index": 5,
+        "entry": {
+          "when_to_use": "When dry dissolved salt needs to be recovered from saltwater and a stove with a heat-safe shallow pan is available.",
+          "strategy": "Pour the saltwater into the shallow pan so it spreads in a thin layer. Place the pan level on the stove and heat on medium-high until the water steams and gently boils away. Continue heating until no visible liquid remains, then reduce to low heat briefly to drive off remaining moisture without scattering or overheating the salt. Turn off the stove once dry salt crystals remain.",
+          "source_task_ids": [
+            "evap-01"
+          ]
+        },
+        "label": "useful",
+        "reasoning": "The entry is correctly bounded to recovering dry dissolved salt from saltwater using evaporation in a shallow heat-safe pan, which matches the evaporate family and would not plausibly trigger for heat, cool, mix, or dissolve tasks.",
+        "affected_families": []
+      }
+    ],
+    "task_sequence": [
+      "heat-01",
+      "heat-02",
+      "cool-01",
+      "mix-01",
+      "dissolve-01",
+      "evap-01"
+    ]
+  },
+  "notes": null
+}

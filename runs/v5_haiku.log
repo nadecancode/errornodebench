@@ -1,0 +1,120 @@
+[92m12:56:19 - LiteLLM:WARNING[0m: common_utils.py:979 - litellm: could not pre-load bedrock-runtime response stream shape — Bedrock event-stream decoding will be unavailable. Error: No module named 'botocore'
+[92m12:56:19 - LiteLLM:WARNING[0m: common_utils.py:24 - litellm: could not pre-load sagemaker-runtime response stream shape — SageMaker event-stream decoding will be unavailable. Error: No module named 'botocore'
+[12:56:19] === seed 1/1 ===                                           cli.py:165
+            15 tasks in parallel                                      cli.py:165
+[12:56:35]  done cool-01                                              cli.py:165
+[12:56:37]  done heat-melt-01                                         cli.py:165
+[12:56:39]  done heat-boil-01                                         cli.py:165
+[12:56:41]  done heat-cook-01                                         cli.py:165
+[12:56:54]  done heat-boil-02                                         cli.py:165
+[12:56:59]  done mix-01                                               cli.py:165
+[12:57:02]  done heat-cook-02                                         cli.py:165
+            done heat-melt-02                                         cli.py:165
+[12:57:17]  done cool-02                                              cli.py:165
+[12:57:18]  done mix-02                                               cli.py:165
+[12:57:23]  done heat-melt-03                                         cli.py:165
+[12:57:25]  done heat-boil-03                                         cli.py:165
+[12:57:38]  done cool-03                                              cli.py:165
+[12:57:41]  done heat-cook-03                                         cli.py:165
+[12:57:43]  done mix-03                                               cli.py:165
+            15 consolidations in parallel                             cli.py:165
+[12:57:57]  done heat-boil-01                                         cli.py:165
+[12:58:00]  done cool-01                                              cli.py:165
+[12:58:03]  done heat-cook-01                                         cli.py:165
+[12:58:06]  done heat-melt-01                                         cli.py:165
+[12:58:11]  done mix-01                                               cli.py:165
+[12:58:15]  done heat-melt-02                                         cli.py:165
+[12:58:20]  done heat-boil-02                                         cli.py:165
+[12:58:21]  done heat-cook-02                                         cli.py:165
+[12:58:26]  done cool-02                                              cli.py:165
+[12:58:30]  done mix-02                                               cli.py:165
+[12:58:35]  done heat-melt-03                                         cli.py:165
+[12:58:42]  done heat-boil-03                                         cli.py:165
+[12:58:45]  done heat-cook-03                                         cli.py:165
+            done cool-03                                              cli.py:165
+[12:58:47]  done mix-03                                               cli.py:165
+            5 family batches in parallel                              cli.py:165
+[12:59:18]  done heat-melt (3 trajectories)                           cli.py:165
+[12:59:19]  done heat-boil (3 trajectories)                           cli.py:165
+[12:59:32]  done cool (3 trajectories)                                cli.py:165
+[12:59:38]  done heat-cook (3 trajectories)                           cli.py:165
+[12:59:55]  done mix (3 trajectories)                                 cli.py:165
+            heat-melt-01                                              cli.py:165
+[13:00:17]  heat-boil-01                                              cli.py:165
+[13:01:23]  heat-cook-01                                              cli.py:165
+[13:02:20]  cool-01                                                   cli.py:165
+[13:03:34]  mix-01                                                    cli.py:165
+[13:04:04]  heat-melt-02                                              cli.py:165
+[13:04:55]  heat-boil-02                                              cli.py:165
+[13:06:15]  heat-cook-02                                              cli.py:165
+[13:07:48]  cool-02                                                   cli.py:165
+[13:09:36]  mix-02                                                    cli.py:165
+[13:10:36]  heat-melt-03                                              cli.py:165
+[13:12:03]  heat-boil-03                                              cli.py:165
+[13:14:07]  heat-cook-03                                              cli.py:165
+[13:16:39]  cool-03                                                   cli.py:165
+[13:18:47]  mix-03                                                    cli.py:165
+[13:20:12]  15 reflections in parallel                                cli.py:165
+[13:20:22]  done heat-cook-01                                         cli.py:165
+[13:20:25]  done heat-boil-01                                         cli.py:165
+            done heat-melt-01                                         cli.py:165
+[13:20:32]  done cool-01                                              cli.py:165
+[13:20:37]  done heat-melt-02                                         cli.py:165
+[13:20:38]  done heat-boil-02                                         cli.py:165
+[13:20:40]  done mix-01                                               cli.py:165
+[13:20:47]  done heat-cook-02                                         cli.py:165
+[13:20:50]  done cool-02                                              cli.py:165
+            done mix-02                                               cli.py:165
+[13:20:55]  done heat-melt-03                                         cli.py:165
+[13:21:00]  done heat-boil-03                                         cli.py:165
+[13:21:04]  done cool-03                                              cli.py:165
+[13:21:06]  done mix-03                                               cli.py:165
+[13:21:11]  done heat-cook-03                                         cli.py:165
+            phase1 (15 parallel), then phase2 (1 call)                cli.py:165
+[13:24:35]  55 entries                                                cli.py:165
+[13:32:55]  26 entries                                                cli.py:165
+[13:36:04]  22 entries                                                cli.py:165
+[13:39:52]  15 entries                                                cli.py:165
+[13:43:20]  22 entries                                                cli.py:165
+      ErrorNodeBench — interference (quality)  consolidator=claude-haiku,       
+                          judge=claude-haiku, seeds=1                           
+┏━━━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━┓
+┃ Arm          ┃  Entries ┃   useful ┃ over_general… ┃ over_special… ┃ garbage ┃
+┡━━━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━┩
+│ fresh        │ 55.0±0.0 │ 36.0±0.0 │       7.0±0.0 │       8.0±0.0 │ 4.0±0.0 │
+│ static_group │ 26.0±0.0 │ 20.0±0.0 │       5.0±0.0 │       0.0±0.0 │ 1.0±0.0 │
+│ cumulative   │ 22.0±0.0 │ 17.0±0.0 │       3.0±0.0 │       0.0±0.0 │ 2.0±0.0 │
+│ reflexion    │ 15.0±0.0 │  8.0±0.0 │       5.0±0.0 │       1.0±0.0 │ 1.0±0.0 │
+│ expel        │ 22.0±0.0 │ 16.0±0.0 │       5.0±0.0 │       0.0±0.0 │ 1.0±0.0 │
+└──────────────┴──────────┴──────────┴───────────────┴───────────────┴─────────┘
+         ErrorNodeBench — coverage (what survived in the final memory)          
+┏━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃              ┃                 ┃                  ┃ Missing families (seed   ┃
+┃ Arm          ┃ Family coverage ┃    Task coverage ┃ 0)                       ┃
+┡━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ fresh        │  100%±0%  (5/5) │ 100%±0%  (15/15) │ —                        │
+│ static_group │  100%±0%  (5/5) │ 100%±0%  (15/15) │ —                        │
+│ cumulative   │   20%±0%  (1/5) │    7%±0%  (1/15) │ cool, heat-boil,         │
+│              │                 │                  │ heat-cook, heat-melt     │
+│ reflexion    │  100%±0%  (5/5) │ 100%±0%  (15/15) │ —                        │
+│ expel        │  100%±0%  (5/5) │ 100%±0%  (15/15) │ —                        │
+└──────────────┴─────────────────┴──────────────────┴──────────────────────────┘
+
+Interference signal (over_generalized + garbage, mean entries per run):
+          fresh: 11.00
+   static_group: 6.00
+     cumulative: 5.00
+      reflexion: 6.00
+          expel: 6.00
+
+  cumulative − fresh delta = -6.00 (paper predicts > 0)
+
+Collapse signal (family coverage; paper predicts static_group ≥ fresh > 
+cumulative):
+          fresh: 100%
+   static_group: 100%
+     cumulative: 20%
+      reflexion: 100%
+          expel: 100%
+
+Saved full result to runs/v5_haiku.json

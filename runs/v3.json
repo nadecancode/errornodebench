@@ -1,0 +1,2375 @@
+{
+  "scenario": "interference",
+  "consolidator_model": "gpt-5.5",
+  "judge_model": "gpt-5.5",
+  "solver_model": "gpt-5.5",
+  "seeds": [
+    {
+      "seed": 0,
+      "fresh": {
+        "arm": "fresh",
+        "consolidator_model": "gpt-5.5",
+        "judge_model": "gpt-5.5",
+        "final_memory": {
+          "entries": [
+            {
+              "when_to_use": "When a cold solid fat such as a stick of butter needs to be melted in a kitchen with a stove and saucepan available.",
+              "strategy": "Place the butter in the saucepan, heat it on the stove over low heat, wait as it softens, and gently swirl the pan if small solid pieces remain until the butter is fully liquid. Use low heat to avoid burning.",
+              "source_task_ids": [
+                "heat-melt-01"
+              ]
+            },
+            {
+              "when_to_use": "When tasked with bringing a pot of cold water to a boil on a stove.",
+              "strategy": "Place the pot flat and stable on a stove burner, turn that burner to high heat, then wait while monitoring. Keep the heat on until large bubbles rapidly break across the surface, indicating a rolling boil.",
+              "source_task_ids": [
+                "heat-boil-01"
+              ]
+            },
+            {
+              "when_to_use": "When frying a raw egg sunny-side-up using a stove, non-stick pan, and butter.",
+              "strategy": "Place the pan on the burner, heat it on medium-low, melt a small pat of butter to coat the pan, then crack in the egg carefully to keep the yolk intact. Cook undisturbed without flipping until the whites turn fully opaque while the yolk remains runny, briefly extending cooking if clear white remains near the yolk. Turn off the burner as soon as the whites are set to avoid overcooking the yolk.",
+              "source_task_ids": [
+                "heat-cook-01"
+              ]
+            },
+            {
+              "when_to_use": "When the goal is to freeze a cup of water into one solid block and a freezer is available.",
+              "strategy": "Place the cup of water upright on a flat freezer shelf, keep the water in the cup rather than pouring it into an ice tray, close the freezer door fully, wait several hours (about 8 hours for room-temperature water), then inspect to confirm no liquid water remains.",
+              "source_task_ids": [
+                "cool-01"
+              ]
+            },
+            {
+              "when_to_use": "When combining dry ingredients with water to make a uniform dough or similar mixture in a bowl.",
+              "strategy": "Add dry ingredients to the bowl first, mix them until evenly distributed, then add water gradually. Stir after each addition, incorporating dry material from the edges, and continue stirring/pressing until the mixture forms one uniform dough.",
+              "source_task_ids": [
+                "mix-01"
+              ]
+            },
+            {
+              "when_to_use": "When melting chocolate for dipping or coating and a stove, saucepan with water, and heat-safe bowl are available.",
+              "strategy": "Use gentle indirect heat: put a shallow layer of water in the saucepan, warm it on low until lightly steaming, place chopped or broken chocolate in a heat-safe bowl set over the pan with the bowl bottom above the water, and stir gently until fully smooth and glossy. Keep heat low to avoid scorching.",
+              "source_task_ids": [
+                "heat-melt-02"
+              ]
+            },
+            {
+              "when_to_use": "When a pot of cold liquid food such as soup needs to be brought to a vigorous or rolling boil on an available stove.",
+              "strategy": "Place the pot securely on a stove burner, turn the burner to high heat, then wait while monitoring. Continue heating past the first steam and small edge bubbles until large bubbles rapidly break across the surface and strong steam indicates a vigorous boil.",
+              "source_task_ids": [
+                "heat-boil-02"
+              ]
+            },
+            {
+              "when_to_use": "When cooking 1 cup of dry rice on a stovetop with a pot, lid, water, and stove available, and the goal is tender cooked rice.",
+              "strategy": "Put the rice in the pot, add about 2 cups of water, bring it to a boil on high heat, then cover the pot and reduce heat to low. Simmer covered for about 18 minutes until water is mostly absorbed, then turn off the stove and let the covered pot rest for about 5 minutes to finish steaming.",
+              "source_task_ids": [
+                "heat-cook-02"
+              ]
+            },
+            {
+              "when_to_use": "When a warm bottled or canned drink needs to become cold to the touch quickly and both a refrigerator and freezer are available.",
+              "strategy": "Use the freezer for faster chilling: place the drink upright in the freezer, wait a moderate short period such as about 25 minutes, then remove it and check by touch before it has time to freeze, expand, or rupture.",
+              "source_task_ids": [
+                "cool-02"
+              ]
+            },
+            {
+              "when_to_use": "When preparing an omelette base from raw eggs and milk using a bowl and whisk, and the goal is a smooth uniform mixture.",
+              "strategy": "Crack the eggs into the mixing bowl first, add the milk, place the whisk in the bowl, then whisk rapidly in circular motions. If streaks of yolk or white remain, continue whisking until the color and texture are consistently smooth and pale yellow.",
+              "source_task_ids": [
+                "mix-02"
+              ]
+            },
+            {
+              "when_to_use": "When melting a block of cheddar or similar cheese into a smooth sauce in a kitchen with milk, a saucepan, stove, and whisk available.",
+              "strategy": "Warm a shallow layer of milk gently in a saucepan over low heat without boiling it. Break the cheese into small chunks, add them to the warm milk, and whisk continuously until the cheese fully melts and incorporates into a smooth sauce.",
+              "source_task_ids": [
+                "heat-melt-03"
+              ]
+            },
+            {
+              "when_to_use": "When gently heating milk to a bare simmer without scalding, especially from cold in a pot on the stove.",
+              "strategy": "Use low heat, stir continuously to prevent hot spots and scorching, monitor temperature with a thermometer held off the pot bottom, and stop heating when the milk reaches about 180\u2013185\u00b0F with tiny bubbles at the edges. Turn off the burner and move the pot off residual heat to prevent overshooting.",
+              "source_task_ids": [
+                "heat-boil-03"
+              ]
+            },
+            {
+              "when_to_use": "When searing a raw steak to medium-rare with a crusted exterior using a heavy pan and high-smoke-point oil.",
+              "strategy": "Pat the steak dry first, preheat the heavy pan over high heat until very hot, add only a thin layer of high-smoke-point oil, then place the steak flat in the pan and leave it undisturbed until a deep brown crust forms. Flip once to sear the second side, remove while the center still feels medium-rare/springy, and rest briefly for carryover cooking and juice redistribution.",
+              "source_task_ids": [
+                "heat-cook-03"
+              ]
+            },
+            {
+              "when_to_use": "When a warm, fluid chocolate ganache needs to be solidified into a firm but scoopable truffle filling and a refrigerator plus shallow dish are available.",
+              "strategy": "Pour the ganache into a shallow dish to create a thinner layer, then refrigerate it and leave it chilled until firm to the touch. Prefer refrigeration over freezing to set it gently without making it solid-frozen.",
+              "source_task_ids": [
+                "cool-03"
+              ]
+            },
+            {
+              "when_to_use": "When asked to make a stable vinaigrette or emulsion using only oil, vinegar, a bowl, and a whisk, with no emulsifier such as mustard, honey, egg yolk, or lecithin available.",
+              "strategy": "You can make a temporary vinaigrette by putting vinegar in the bowl, slowly drizzling in oil while whisking continuously, then whisking vigorously to disperse fine droplets. However, do not claim it is stable; without an emulsifier it will separate after sitting.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            }
+          ]
+        },
+        "verdicts": [
+          {
+            "entry_index": 0,
+            "entry": {
+              "when_to_use": "When a cold solid fat such as a stick of butter needs to be melted in a kitchen with a stove and saucepan available.",
+              "strategy": "Place the butter in the saucepan, heat it on the stove over low heat, wait as it softens, and gently swirl the pan if small solid pieces remain until the butter is fully liquid. Use low heat to avoid burning.",
+              "source_task_ids": [
+                "heat-melt-01"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry correctly applies low heat in a saucepan to melt a solid meltable fat like butter into liquid, matching the heat-melt family. Its conditions are narrow enough that it should not trigger for boiling, cooking, cooling, or mixing tasks, and the strategy would not mislead other families.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 1,
+            "entry": {
+              "when_to_use": "When tasked with bringing a pot of cold water to a boil on a stove.",
+              "strategy": "Place the pot flat and stable on a stove burner, turn that burner to high heat, then wait while monitoring. Keep the heat on until large bubbles rapidly break across the surface, indicating a rolling boil.",
+              "source_task_ids": [
+                "heat-boil-01"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the heat-boil family and would not mislead other families, but the when_to_use is limited to the exact seen task of bringing a pot of cold water to a boil. It would not generalize to close heat-boil variants such as boiling other water-like liquids or water at a different starting temperature.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 2,
+            "entry": {
+              "when_to_use": "When frying a raw egg sunny-side-up using a stove, non-stick pan, and butter.",
+              "strategy": "Place the pan on the burner, heat it on medium-low, melt a small pat of butter to coat the pan, then crack in the egg carefully to keep the yolk intact. Cook undisturbed without flipping until the whites turn fully opaque while the yolk remains runny, briefly extending cooking if clear white remains near the yolk. Turn off the burner as soon as the whites are set to avoid overcooking the yolk.",
+              "source_task_ids": [
+                "heat-cook-01"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the heat-cook sunny-side-up egg task and would not mislead other families, but the when_to_use is narrowly tied to the exact seen setup: raw egg sunny-side-up with a stove, non-stick pan, and butter. It may fail to apply to close heat-cook variants such as frying an egg with oil, a different pan, or similar egg-frying goals.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 3,
+            "entry": {
+              "when_to_use": "When the goal is to freeze a cup of water into one solid block and a freezer is available.",
+              "strategy": "Place the cup of water upright on a flat freezer shelf, keep the water in the cup rather than pouring it into an ice tray, close the freezer door fully, wait several hours (about 8 hours for room-temperature water), then inspect to confirm no liquid water remains.",
+              "source_task_ids": [
+                "cool-01"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The entry is correct for the specific cool task of freezing a cup of water into one solid block, but its when_to_use is limited to that exact instance and would not generalize to close variants in the cool family such as freezing other liquids, chilling a drink, or solidifying ganache.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 4,
+            "entry": {
+              "when_to_use": "When combining dry ingredients with water to make a uniform dough or similar mixture in a bowl.",
+              "strategy": "Add dry ingredients to the bowl first, mix them until evenly distributed, then add water gradually. Stir after each addition, incorporating dry material from the edges, and continue stirring/pressing until the mixture forms one uniform dough.",
+              "source_task_ids": [
+                "mix-01"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly scoped to the mix family, specifically making dough or similar uniform mixtures from dry ingredients and water in a bowl. The strategy uses gradual addition and stirring without heat or cooling, so it would help on close mix variants and is unlikely to trigger for heat-melt, heat-boil, heat-cook, or cool tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 5,
+            "entry": {
+              "when_to_use": "When melting chocolate for dipping or coating and a stove, saucepan with water, and heat-safe bowl are available.",
+              "strategy": "Use gentle indirect heat: put a shallow layer of water in the saucepan, warm it on low until lightly steaming, place chopped or broken chocolate in a heat-safe bowl set over the pan with the bowl bottom above the water, and stir gently until fully smooth and glossy. Keep heat low to avoid scorching.",
+              "source_task_ids": [
+                "heat-melt-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry gives a correct low/gentle-heat melting strategy for chocolate, which is a meltable solid in the heat-melt family, and its when_to_use is narrowly bounded to melting chocolate for dipping or coating. It would not plausibly trigger for boiling, cooking, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 6,
+            "entry": {
+              "when_to_use": "When a pot of cold liquid food such as soup needs to be brought to a vigorous or rolling boil on an available stove.",
+              "strategy": "Place the pot securely on a stove burner, turn the burner to high heat, then wait while monitoring. Continue heating past the first steam and small edge bubbles until large bubbles rapidly break across the surface and strong steam indicates a vigorous boil.",
+              "source_task_ids": [
+                "heat-boil-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to bringing a pot of cold liquid food such as soup to a vigorous or rolling boil on a stove, and prescribes high heat with waiting until continuous large bubbles form. This matches the heat-boil family and would not plausibly trigger for melting, cooking solids, cooling/freezing, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 7,
+            "entry": {
+              "when_to_use": "When cooking 1 cup of dry rice on a stovetop with a pot, lid, water, and stove available, and the goal is tender cooked rice.",
+              "strategy": "Put the rice in the pot, add about 2 cups of water, bring it to a boil on high heat, then cover the pot and reduce heat to low. Simmer covered for about 18 minutes until water is mostly absorbed, then turn off the stove and let the covered pot rest for about 5 minutes to finish steaming.",
+              "source_task_ids": [
+                "heat-cook-02"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for cooking stovetop rice, a heat-cook task, and would not mislead other families. However, the when_to_use is narrowly tied to exactly 1 cup of dry rice and specific available tools, so it may fail to apply to close variants such as cooking a different quantity of rice.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 8,
+            "entry": {
+              "when_to_use": "When a warm bottled or canned drink needs to become cold to the touch quickly and both a refrigerator and freezer are available.",
+              "strategy": "Use the freezer for faster chilling: place the drink upright in the freezer, wait a moderate short period such as about 25 minutes, then remove it and check by touch before it has time to freeze, expand, or rupture.",
+              "source_task_ids": [
+                "cool-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the cool family, specifically chilling a warm bottled or canned drink. The freezer strategy is appropriate for rapid cooling and includes safeguards against freezing, expansion, or rupture. It would not plausibly trigger for heating, melting, boiling, cooking, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 9,
+            "entry": {
+              "when_to_use": "When preparing an omelette base from raw eggs and milk using a bowl and whisk, and the goal is a smooth uniform mixture.",
+              "strategy": "Crack the eggs into the mixing bowl first, add the milk, place the whisk in the bowl, then whisk rapidly in circular motions. If streaks of yolk or white remain, continue whisking until the color and texture are consistently smooth and pale yellow.",
+              "source_task_ids": [
+                "mix-02"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the mix family, specifically whisking eggs and milk into a uniform omelette base. However, the when_to_use is narrowly tied to that exact ingredient/task setup and would not fire for close mix-family variants like whisking eggs with cream, combining other wet ingredients, making vinaigrette, or mixing dough.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 10,
+            "entry": {
+              "when_to_use": "When melting a block of cheddar or similar cheese into a smooth sauce in a kitchen with milk, a saucepan, stove, and whisk available.",
+              "strategy": "Warm a shallow layer of milk gently in a saucepan over low heat without boiling it. Break the cheese into small chunks, add them to the warm milk, and whisk continuously until the cheese fully melts and incorporates into a smooth sauce.",
+              "source_task_ids": [
+                "heat-melt-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to melting cheddar or similar cheese into a sauce using gentle low heat, matching the heat-melt family and avoiding high heat or cooling. Its conditions are specific enough that it should not trigger for boiling, cooking, cooling, or general mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 11,
+            "entry": {
+              "when_to_use": "When gently heating milk to a bare simmer without scalding, especially from cold in a pot on the stove.",
+              "strategy": "Use low heat, stir continuously to prevent hot spots and scorching, monitor temperature with a thermometer held off the pot bottom, and stop heating when the milk reaches about 180\u2013185\u00b0F with tiny bubbles at the edges. Turn off the burner and move the pot off residual heat to prevent overshooting.",
+              "source_task_ids": [
+                "heat-boil-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the heat-boil subcase of gently bringing milk to a bare simmer without scalding. Its low-heat, stirring, monitoring, and stopping before overshoot strategy is appropriate for heat-sensitive milk and would not plausibly trigger for melting, cooling, cooking, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 12,
+            "entry": {
+              "when_to_use": "When searing a raw steak to medium-rare with a crusted exterior using a heavy pan and high-smoke-point oil.",
+              "strategy": "Pat the steak dry first, preheat the heavy pan over high heat until very hot, add only a thin layer of high-smoke-point oil, then place the steak flat in the pan and leave it undisturbed until a deep brown crust forms. Flip once to sear the second side, remove while the center still feels medium-rare/springy, and rest briefly for carryover cooking and juice redistribution.",
+              "source_task_ids": [
+                "heat-cook-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the heat-cook family, specifically searing a raw steak. The strategy is appropriate for that goal and is unlikely to be retrieved for melting, boiling, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 13,
+            "entry": {
+              "when_to_use": "When a warm, fluid chocolate ganache needs to be solidified into a firm but scoopable truffle filling and a refrigerator plus shallow dish are available.",
+              "strategy": "Pour the ganache into a shallow dish to create a thinner layer, then refrigerate it and leave it chilled until firm to the touch. Prefer refrigeration over freezing to set it gently without making it solid-frozen.",
+              "source_task_ids": [
+                "cool-03"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the cool family instance of setting warm chocolate ganache, and it would not mislead on other families. However, the when_to_use is narrowly tied to the exact observed task wording and available tools rather than covering close cool-family variants such as setting other warm chocolate fillings or chilling similar semi-fluid mixtures.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 14,
+            "entry": {
+              "when_to_use": "When asked to make a stable vinaigrette or emulsion using only oil, vinegar, a bowl, and a whisk, with no emulsifier such as mustard, honey, egg yolk, or lecithin available.",
+              "strategy": "You can make a temporary vinaigrette by putting vinegar in the bowl, slowly drizzling in oil while whisking continuously, then whisking vigorously to disperse fine droplets. However, do not claim it is stable; without an emulsifier it will separate after sitting.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the vinaigrette/emulsion mixing case and would not mislead other families, but the when_to_use is narrowly tied to the exact observed setup: oil, vinegar, bowl, whisk, and no emulsifier. It would likely fail to fire for close mix-family variants such as lemon juice instead of vinegar, a jar instead of a bowl, or another stirring tool.",
+            "affected_families": []
+          }
+        ],
+        "task_sequence": [
+          "heat-melt-01",
+          "heat-boil-01",
+          "heat-cook-01",
+          "cool-01",
+          "mix-01",
+          "heat-melt-02",
+          "heat-boil-02",
+          "heat-cook-02",
+          "cool-02",
+          "mix-02",
+          "heat-melt-03",
+          "heat-boil-03",
+          "heat-cook-03",
+          "cool-03",
+          "mix-03"
+        ],
+        "coverage": {
+          "n_families_total": 5,
+          "n_families_covered": 5,
+          "n_tasks_total": 15,
+          "n_tasks_covered": 15,
+          "missing_families": [],
+          "missing_task_ids": []
+        }
+      },
+      "static_group": {
+        "arm": "static_group",
+        "consolidator_model": "gpt-5.5",
+        "judge_model": "gpt-5.5",
+        "final_memory": {
+          "entries": [
+            {
+              "when_to_use": "When melting butter or another fat that tolerates direct gentle heat in a saucepan.",
+              "strategy": "Place the solid fat in a saucepan, heat it on low, wait until mostly melted, and gently swirl or stir to melt any remaining pieces without burning.",
+              "source_task_ids": [
+                "heat-melt-01"
+              ]
+            },
+            {
+              "when_to_use": "When melting chocolate into a smooth liquid and scorching or seizing is a risk.",
+              "strategy": "Use gentle indirect heat: simmer a shallow layer of water in a saucepan on low, place chocolate pieces in a heat-safe bowl above the water, and stir until fully smooth and glossy.",
+              "source_task_ids": [
+                "heat-melt-02"
+              ]
+            },
+            {
+              "when_to_use": "When melting a block of cheese into a sauce rather than simply liquefying it alone.",
+              "strategy": "Warm a small amount of milk on low heat, break the cheese into small chunks, add it to the warm milk, and whisk continuously until it incorporates into a smooth sauce.",
+              "source_task_ids": [
+                "heat-melt-03"
+              ]
+            },
+            {
+              "when_to_use": "When melting solid food that will melt more evenly if reduced in size first, such as chocolate bars or cheese blocks.",
+              "strategy": "Break the solid into smaller pieces or chunks before heating so it melts faster and more uniformly.",
+              "source_task_ids": [
+                "heat-melt-02",
+                "heat-melt-03"
+              ]
+            },
+            {
+              "when_to_use": "When applying heat to melt delicate ingredients that can burn, scorch, or separate.",
+              "strategy": "Use low, gentle heat and continue only until the solids are fully melted; stir, whisk, or swirl near the end to distribute heat and eliminate small remaining pieces.",
+              "source_task_ids": [
+                "heat-melt-01",
+                "heat-melt-02",
+                "heat-melt-03"
+              ]
+            },
+            {
+              "when_to_use": "When bringing a pot of water, soup, or another non-delicate liquid from cold to a vigorous/rolling boil on a stove.",
+              "strategy": "Place the pot securely on a stove burner, turn the burner to high heat, then wait while monitoring. Continue heating until large bubbles rapidly break across the surface and steam rises strongly.",
+              "source_task_ids": [
+                "heat-boil-01",
+                "heat-boil-02"
+              ]
+            },
+            {
+              "when_to_use": "When heating milk or another scorch-prone dairy liquid to a bare simmer without scalding or boiling it.",
+              "strategy": "Use gentle low heat, stir continuously to prevent hot spots, and monitor temperature with a thermometer held off the bottom of the pot. Aim for tiny edge bubbles around 180\u2013185\u00b0F, then turn off the burner and move the pot off residual heat to prevent overheating.",
+              "source_task_ids": [
+                "heat-boil-03"
+              ]
+            },
+            {
+              "when_to_use": "When frying a sunny-side-up egg in a pan and the goal is set whites with an intact runny yolk.",
+              "strategy": "Use low to medium-low heat, melt a small amount of butter to coat the pan, crack the egg carefully, then cook it undisturbed without flipping until the whites turn opaque. Turn off the heat as soon as the whites are set to avoid overcooking the yolk.",
+              "source_task_ids": [
+                "heat-cook-01"
+              ]
+            },
+            {
+              "when_to_use": "When cooking 1 cup of dry white rice on a stovetop with a pot and lid.",
+              "strategy": "Combine the rice with about 2 cups of water, bring it to a boil on high heat, then cover the pot and reduce to low for a steady simmer. Let it simmer covered until the water is absorbed, about 18 minutes, then turn off the heat and let it rest covered briefly to finish steaming.",
+              "source_task_ids": [
+                "heat-cook-02"
+              ]
+            },
+            {
+              "when_to_use": "When searing a raw steak to medium-rare with a browned crust in a heavy pan such as cast iron.",
+              "strategy": "Pat the steak dry first, preheat the pan over high heat until very hot, add a thin layer of high-smoke-point oil, then place the steak in the pan and leave it undisturbed until a deep brown crust forms. Flip once, sear the second side, remove while the center is still medium-rare, and rest briefly before serving.",
+              "source_task_ids": [
+                "heat-cook-03"
+              ]
+            },
+            {
+              "when_to_use": "When cooking food on a stove where the desired result depends on texture and doneness rather than simply heating through.",
+              "strategy": "Adjust burner heat to match the cooking goal: use gentle low or medium-low heat for delicate foods that should not brown or overcook, reduce boiling liquids to a covered simmer for absorption cooking, and use very high heat only when a strong sear or crust is desired. Stop or reduce heat once the target doneness is reached.",
+              "source_task_ids": [
+                "heat-cook-01",
+                "heat-cook-02",
+                "heat-cook-03"
+              ]
+            },
+            {
+              "when_to_use": "When the goal is to freeze a cup or container of water into one solid block rather than separate cubes.",
+              "strategy": "Place the water container upright on a flat freezer shelf, close the freezer fully, wait several hours such as overnight/8 hours, then inspect to confirm no liquid water remains.",
+              "source_task_ids": [
+                "cool-01"
+              ]
+            },
+            {
+              "when_to_use": "When a warm bottled drink needs to become cold to the touch quickly but should not freeze, burst, or be damaged.",
+              "strategy": "Put the bottle upright in the freezer for a short monitored interval, about 25 minutes, then remove it and check that it feels cold before freezing begins.",
+              "source_task_ids": [
+                "cool-02"
+              ]
+            },
+            {
+              "when_to_use": "When warm ganache or a similar soft chocolate filling needs to set into a firm, scoopable filling without freezing solid.",
+              "strategy": "Spread it into a shallow dish to cool evenly, refrigerate it, and leave it chilled until firm to the touch.",
+              "source_task_ids": [
+                "cool-03"
+              ]
+            },
+            {
+              "when_to_use": "When combining dry and wet ingredients into a uniform dough or batter-like mixture, especially when dry ingredients need even distribution before hydration.",
+              "strategy": "Add dry ingredients to the bowl first, mix them until evenly distributed, then add liquid gradually. Stir and press the mixture after each liquid addition, adding more liquid only if dry patches remain, until the mixture becomes uniform.",
+              "source_task_ids": [
+                "mix-01"
+              ]
+            },
+            {
+              "when_to_use": "When whisking liquid ingredients that include components which start visibly separate, such as egg yolks/whites with milk.",
+              "strategy": "Put the ingredients in the bowl, position the whisk in the mixture, then whisk vigorously in circular motions. Continue whisking past the initial blending stage until the color and texture are consistent with no visible streaks.",
+              "source_task_ids": [
+                "mix-02"
+              ]
+            },
+            {
+              "when_to_use": "When trying to make a vinaigrette or other oil-and-vinegar mixture using only oil, vinegar, a bowl, and a whisk, with no emulsifier available.",
+              "strategy": "Pour the vinegar into the bowl first, then drizzle the oil in slowly while whisking continuously and vigorously to form a temporary cloudy emulsion. Do not assume it will remain stable; without an emulsifier, expect separation after resting.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            }
+          ]
+        },
+        "verdicts": [
+          {
+            "entry_index": 0,
+            "entry": {
+              "when_to_use": "When melting butter or another fat that tolerates direct gentle heat in a saucepan.",
+              "strategy": "Place the solid fat in a saucepan, heat it on low, wait until mostly melted, and gently swirl or stir to melt any remaining pieces without burning.",
+              "source_task_ids": [
+                "heat-melt-01"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to melting butter or similar fats with gentle direct heat in a saucepan, which fits the heat-melt family and avoids applying the strategy to boiling, cooking, cooling, or mixing tasks. The low-heat strategy is appropriate and not misleading for other families.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 1,
+            "entry": {
+              "when_to_use": "When melting chocolate into a smooth liquid and scorching or seizing is a risk.",
+              "strategy": "Use gentle indirect heat: simmer a shallow layer of water in a saucepan on low, place chocolate pieces in a heat-safe bowl above the water, and stir until fully smooth and glossy.",
+              "source_task_ids": [
+                "heat-melt-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to melting chocolate into a smooth liquid, a heat-melt task where gentle low/indirect heat prevents scorching or seizing. It would not plausibly trigger for boiling, cooking, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 2,
+            "entry": {
+              "when_to_use": "When melting a block of cheese into a sauce rather than simply liquefying it alone.",
+              "strategy": "Warm a small amount of milk on low heat, break the cheese into small chunks, add it to the warm milk, and whisk continuously until it incorporates into a smooth sauce.",
+              "source_task_ids": [
+                "heat-melt-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is bounded to melting cheese into a sauce and uses low heat, which aligns with the heat-melt family for a meltable solid. Its conditions are not broad enough to trigger cooling, boiling, cooking, or generic mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 3,
+            "entry": {
+              "when_to_use": "When melting solid food that will melt more evenly if reduced in size first, such as chocolate bars or cheese blocks.",
+              "strategy": "Break the solid into smaller pieces or chunks before heating so it melts faster and more uniformly.",
+              "source_task_ids": [
+                "heat-melt-02",
+                "heat-melt-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly scoped to solid-food melting tasks and gives a valid auxiliary strategy for the heat-melt family: reducing chocolate or cheese into smaller pieces promotes faster, more even melting. Its applicability is bounded to melting and would not plausibly trigger for cooling, boiling, cooking, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 4,
+            "entry": {
+              "when_to_use": "When applying heat to melt delicate ingredients that can burn, scorch, or separate.",
+              "strategy": "Use low, gentle heat and continue only until the solids are fully melted; stir, whisk, or swirl near the end to distribute heat and eliminate small remaining pieces.",
+              "source_task_ids": [
+                "heat-melt-01",
+                "heat-melt-02",
+                "heat-melt-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to melting delicate solid ingredients using gentle low heat until fully melted, which matches the heat-melt family and would not plausibly trigger for boiling, cooking, cooling, or mixing tasks because it explicitly requires applying heat to melt solids.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 5,
+            "entry": {
+              "when_to_use": "When bringing a pot of water, soup, or another non-delicate liquid from cold to a vigorous/rolling boil on a stove.",
+              "strategy": "Place the pot securely on a stove burner, turn the burner to high heat, then wait while monitoring. Continue heating until large bubbles rapidly break across the surface and steam rises strongly.",
+              "source_task_ids": [
+                "heat-boil-01",
+                "heat-boil-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to bringing water, soup, or another non-delicate liquid to a vigorous/rolling boil on a stove, and specifies high heat until continuous large bubbling. It excludes delicate liquids, so it is unlikely to misfire on melting, cooking, cooling, or mixing families.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 6,
+            "entry": {
+              "when_to_use": "When heating milk or another scorch-prone dairy liquid to a bare simmer without scalding or boiling it.",
+              "strategy": "Use gentle low heat, stir continuously to prevent hot spots, and monitor temperature with a thermometer held off the bottom of the pot. Aim for tiny edge bubbles around 180\u2013185\u00b0F, then turn off the burner and move the pot off residual heat to prevent overheating.",
+              "source_task_ids": [
+                "heat-boil-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the heat-boil family subcase of bringing scorch-prone dairy liquids like milk to a bare simmer. It avoids the high-heat boiling strategy that would scald milk and would not plausibly trigger for melting, cooling, mixing, or frying tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 7,
+            "entry": {
+              "when_to_use": "When frying a sunny-side-up egg in a pan and the goal is set whites with an intact runny yolk.",
+              "strategy": "Use low to medium-low heat, melt a small amount of butter to coat the pan, crack the egg carefully, then cook it undisturbed without flipping until the whites turn opaque. Turn off the heat as soon as the whites are set to avoid overcooking the yolk.",
+              "source_task_ids": [
+                "heat-cook-01"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to frying a sunny-side-up egg with set whites and a runny yolk, which is within the heat-cook family. The strategy uses gentle stovetop heat with butter and avoids flipping, matching the desired egg outcome. It would not plausibly trigger for melting, boiling, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 8,
+            "entry": {
+              "when_to_use": "When cooking 1 cup of dry white rice on a stovetop with a pot and lid.",
+              "strategy": "Combine the rice with about 2 cups of water, bring it to a boil on high heat, then cover the pot and reduce to low for a steady simmer. Let it simmer covered until the water is absorbed, about 18 minutes, then turn off the heat and let it rest covered briefly to finish steaming.",
+              "source_task_ids": [
+                "heat-cook-02"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for stovetop cooking exactly 1 cup of dry white rice, but the when_to_use is too narrow and would not generalize to close variants in the same heat-cook family, such as different rice quantities or similar stovetop rice-cooking tasks requiring adjusted ratios/times.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 9,
+            "entry": {
+              "when_to_use": "When searing a raw steak to medium-rare with a browned crust in a heavy pan such as cast iron.",
+              "strategy": "Pat the steak dry first, preheat the pan over high heat until very hot, add a thin layer of high-smoke-point oil, then place the steak in the pan and leave it undisturbed until a deep brown crust forms. Flip once, sear the second side, remove while the center is still medium-rare, and rest briefly before serving.",
+              "source_task_ids": [
+                "heat-cook-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to a heat-cook steak-searing task and gives an appropriate cooking strategy for achieving a browned crust while keeping the center medium-rare. Its conditions are narrow enough that it would not plausibly trigger for melting, boiling, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 10,
+            "entry": {
+              "when_to_use": "When cooking food on a stove where the desired result depends on texture and doneness rather than simply heating through.",
+              "strategy": "Adjust burner heat to match the cooking goal: use gentle low or medium-low heat for delicate foods that should not brown or overcook, reduce boiling liquids to a covered simmer for absorption cooking, and use very high heat only when a strong sear or crust is desired. Stop or reduce heat once the target doneness is reached.",
+              "source_task_ids": [
+                "heat-cook-01",
+                "heat-cook-02",
+                "heat-cook-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is bounded to stove cooking tasks where texture and doneness are the objective, matching the heat-cook family variants such as delicate foods, absorption cooking, and searing. It does not broadly recommend heat for melting, boiling, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 11,
+            "entry": {
+              "when_to_use": "When the goal is to freeze a cup or container of water into one solid block rather than separate cubes.",
+              "strategy": "Place the water container upright on a flat freezer shelf, close the freezer fully, wait several hours such as overnight/8 hours, then inspect to confirm no liquid water remains.",
+              "source_task_ids": [
+                "cool-01"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the cool family, specifically freezing water into a solid block, but the when_to_use is narrowly tied to a cup/container of water and avoiding separate cubes. It would not generalize to close cool-family variants such as freezing another liquid or solidifying warm ganache.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 12,
+            "entry": {
+              "when_to_use": "When a warm bottled drink needs to become cold to the touch quickly but should not freeze, burst, or be damaged.",
+              "strategy": "Put the bottle upright in the freezer for a short monitored interval, about 25 minutes, then remove it and check that it feels cold before freezing begins.",
+              "source_task_ids": [
+                "cool-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly scoped to a cooling/chilling task: making a warm bottled drink cold without freezing or damage. The monitored short freezer interval is appropriate and the conditions are narrow enough that it would not apply to heating, melting, boiling, cooking, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 13,
+            "entry": {
+              "when_to_use": "When warm ganache or a similar soft chocolate filling needs to set into a firm, scoopable filling without freezing solid.",
+              "strategy": "Spread it into a shallow dish to cool evenly, refrigerate it, and leave it chilled until firm to the touch.",
+              "source_task_ids": [
+                "cool-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to a cooling/solidifying task for warm ganache or similar chocolate fillings, and the refrigeration strategy supports firming without applying heat or causing unrelated mixing/boiling/melting behavior. It would not plausibly trigger for other task families.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 14,
+            "entry": {
+              "when_to_use": "When combining dry and wet ingredients into a uniform dough or batter-like mixture, especially when dry ingredients need even distribution before hydration.",
+              "strategy": "Add dry ingredients to the bowl first, mix them until evenly distributed, then add liquid gradually. Stir and press the mixture after each liquid addition, adding more liquid only if dry patches remain, until the mixture becomes uniform.",
+              "source_task_ids": [
+                "mix-01"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to mixing dry and wet ingredients into a uniform dough or batter-like mixture, which is a specific subset of the mix family. The strategy uses a bowl and stirring/pressing with gradual hydration and does not suggest heat or cooling, so it would not plausibly misfire on heat-melt, heat-boil, heat-cook, or cool tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 15,
+            "entry": {
+              "when_to_use": "When whisking liquid ingredients that include components which start visibly separate, such as egg yolks/whites with milk.",
+              "strategy": "Put the ingredients in the bowl, position the whisk in the mixture, then whisk vigorously in circular motions. Continue whisking past the initial blending stage until the color and texture are consistent with no visible streaks.",
+              "source_task_ids": [
+                "mix-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly scoped to a mixing subfamily: whisking visibly separate liquid ingredients into a uniform mixture. The strategy uses an appropriate bowl and whisk and avoids heat or cooling, so it would not plausibly misfire on heat-melt, heat-boil, heat-cook, or cool tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 16,
+            "entry": {
+              "when_to_use": "When trying to make a vinaigrette or other oil-and-vinegar mixture using only oil, vinegar, a bowl, and a whisk, with no emulsifier available.",
+              "strategy": "Pour the vinegar into the bowl first, then drizzle the oil in slowly while whisking continuously and vigorously to form a temporary cloudy emulsion. Do not assume it will remain stable; without an emulsifier, expect separation after resting.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the mix family, specifically oil-and-vinegar vinaigrette mixtures without emulsifier, and recommends bowl plus whisking without heat or cooling. It would help on that mix subcase and is unlikely to trigger for other families.",
+            "affected_families": []
+          }
+        ],
+        "task_sequence": [
+          "heat-melt-01",
+          "heat-boil-01",
+          "heat-cook-01",
+          "cool-01",
+          "mix-01",
+          "heat-melt-02",
+          "heat-boil-02",
+          "heat-cook-02",
+          "cool-02",
+          "mix-02",
+          "heat-melt-03",
+          "heat-boil-03",
+          "heat-cook-03",
+          "cool-03",
+          "mix-03"
+        ],
+        "coverage": {
+          "n_families_total": 5,
+          "n_families_covered": 5,
+          "n_tasks_total": 15,
+          "n_tasks_covered": 15,
+          "missing_families": [],
+          "missing_task_ids": []
+        }
+      },
+      "cumulative": {
+        "arm": "cumulative",
+        "consolidator_model": "gpt-5.5",
+        "judge_model": "gpt-5.5",
+        "final_memory": {
+          "entries": [
+            {
+              "when_to_use": "When trying to make a stable vinaigrette using only oil, vinegar, a bowl, and a whisk, with no emulsifier such as mustard, honey, egg yolk, or garlic available.",
+              "strategy": "Drizzle the oil slowly into the vinegar while whisking continuously, then whisk vigorously to form a cloudy temporary emulsion. Expect it to separate after sitting; a truly stable vinaigrette requires an emulsifying ingredient or additional stabilizing method.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            }
+          ]
+        },
+        "verdicts": [
+          {
+            "entry_index": 0,
+            "entry": {
+              "when_to_use": "When trying to make a stable vinaigrette using only oil, vinegar, a bowl, and a whisk, with no emulsifier such as mustard, honey, egg yolk, or garlic available.",
+              "strategy": "Drizzle the oil slowly into the vinegar while whisking continuously, then whisk vigorously to form a cloudy temporary emulsion. Expect it to separate after sitting; a truly stable vinaigrette requires an emulsifying ingredient or additional stabilizing method.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The entry is correct for the specific vinaigrette-without-emulsifier instance, but its when_to_use is so narrow that it would not fire for plausible close variants within the mix family, such as vinaigrettes with an emulsifier or other mixing tasks requiring a uniform combination.",
+            "affected_families": []
+          }
+        ],
+        "task_sequence": [
+          "heat-melt-01",
+          "heat-boil-01",
+          "heat-cook-01",
+          "cool-01",
+          "mix-01",
+          "heat-melt-02",
+          "heat-boil-02",
+          "heat-cook-02",
+          "cool-02",
+          "mix-02",
+          "heat-melt-03",
+          "heat-boil-03",
+          "heat-cook-03",
+          "cool-03",
+          "mix-03"
+        ],
+        "coverage": {
+          "n_families_total": 5,
+          "n_families_covered": 1,
+          "n_tasks_total": 15,
+          "n_tasks_covered": 1,
+          "missing_families": [
+            "cool",
+            "heat-boil",
+            "heat-cook",
+            "heat-melt"
+          ],
+          "missing_task_ids": [
+            "cool-01",
+            "cool-02",
+            "cool-03",
+            "heat-boil-01",
+            "heat-boil-02",
+            "heat-boil-03",
+            "heat-cook-01",
+            "heat-cook-02",
+            "heat-cook-03",
+            "heat-melt-01",
+            "heat-melt-02",
+            "heat-melt-03",
+            "mix-01",
+            "mix-02"
+          ]
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "fresh": {
+        "arm": "fresh",
+        "consolidator_model": "gpt-5.5",
+        "judge_model": "gpt-5.5",
+        "final_memory": {
+          "entries": [
+            {
+              "when_to_use": "When the goal is to melt a cold stick of butter into liquid and a stove with a saucepan is available.",
+              "strategy": "Place the butter in the saucepan, set it on a stove burner over low heat, and gently swirl or continue heating until all solid pieces disappear. Use low heat to melt evenly and avoid burning.",
+              "source_task_ids": [
+                "heat-melt-01"
+              ]
+            },
+            {
+              "when_to_use": "When the goal is to bring a pot of cold water to a rolling boil on a stove.",
+              "strategy": "Place the pot securely on an appropriate burner, turn that burner to high heat, then wait while monitoring. Continue heating past the first small bubbles and steam until large bubbles break continuously and vigorously across the entire water surface; only then consider it a rolling boil.",
+              "source_task_ids": [
+                "heat-boil-01"
+              ]
+            },
+            {
+              "when_to_use": "When frying a raw egg sunny-side-up in a non-stick pan with butter on a stove.",
+              "strategy": "Place the pan on the burner, heat it on medium-low, melt a small pat of butter until it coats the pan and lightly foams, then crack in the egg without breaking the yolk. Do not flip; cook gently until the white is fully set while the yolk remains intact and runny, then turn off the burner.",
+              "source_task_ids": [
+                "heat-cook-01"
+              ]
+            },
+            {
+              "when_to_use": "When the goal is to freeze liquid water into solid ice and a freezer plus an ice tray or similar shallow compartmented container are available.",
+              "strategy": "Transfer the water from the cup into the ice tray, place the filled tray flat and level inside the freezer, close the freezer door securely, and wait several hours until the water is fully frozen.",
+              "source_task_ids": [
+                "cool-01"
+              ]
+            },
+            {
+              "when_to_use": "When making a simple dough from flour, water, and salt in a mixing bowl using a spoon or similar utensil.",
+              "strategy": "Add flour first, mix in salt before fully hydrating, then add water gradually. Stir to hydrate and clump the mixture, continue stirring/folding to incorporate dry flour from the edges, and press/fold against the bowl until the dough becomes single and uniform.",
+              "source_task_ids": [
+                "mix-01"
+              ]
+            },
+            {
+              "when_to_use": "When melting chocolate for dipping and a stove, saucepan, water, and heat-safe bowl are available.",
+              "strategy": "Use a double boiler: add a shallow amount of water to the saucepan, bring it to a gentle simmer, place broken chocolate pieces in the heat-safe bowl, and set the bowl over the pan without letting it touch the water. Stir slowly and continuously; turn off the heat near the end and keep stirring until the chocolate is fully smooth to avoid scorching or overheating.",
+              "source_task_ids": [
+                "heat-melt-02"
+              ]
+            },
+            {
+              "when_to_use": "When a cold liquid food such as soup is in a pot and the goal is to bring it to a vigorous or rolling boil on a stove.",
+              "strategy": "Place the pot centered on a stove burner, turn the burner to high, stir early to distribute heat, then keep heating and monitor until large bubbles break rapidly across the surface.",
+              "source_task_ids": [
+                "heat-boil-02"
+              ]
+            },
+            {
+              "when_to_use": "When cooking a cup of dry rice in a pot on a stove with water and a lid, and the goal is tender cooked rice.",
+              "strategy": "Put the rice in the pot, add about two cups of water, bring it to a boil on high heat, then cover and reduce to low for a gentle simmer. Simmer covered for about 18 minutes until most water is absorbed, then turn off the heat and let it rest covered for about 5 minutes to finish steaming.",
+              "source_task_ids": [
+                "heat-cook-02"
+              ]
+            },
+            {
+              "when_to_use": "When a warm bottled carbonated drink needs to be made cold to the touch quickly and both a refrigerator and freezer are available.",
+              "strategy": "Use the freezer for faster chilling: place the sealed bottle upright on a stable freezer shelf, close the freezer door, wait a moderate time such as about 25 minutes, then remove it and check that it feels cold without signs of freezing or bursting. Do not leave it in the freezer too long.",
+              "source_task_ids": [
+                "cool-02"
+              ]
+            },
+            {
+              "when_to_use": "When making an omelette base from raw eggs and milk in a mixing bowl with a whisk available.",
+              "strategy": "Crack the eggs into the bowl first, add the milk, then whisk. If yolks or white/milk streaks remain, continue whisking vigorously until the mixture is smooth and uniformly pale yellow.",
+              "source_task_ids": [
+                "mix-02"
+              ]
+            },
+            {
+              "when_to_use": "When melting a block of cheddar or similar cheese for a sauce in a kitchen with milk, a saucepan, stove, and whisk.",
+              "strategy": "Pour a small amount of milk into the saucepan, warm it gently over low heat, break the cheese into small chunks, add the chunks to the warm milk, and whisk continuously over low heat until smooth to prevent scorching and clumping.",
+              "source_task_ids": [
+                "heat-melt-03"
+              ]
+            },
+            {
+              "when_to_use": "When heating milk to a bare simmer on a stovetop without scalding it.",
+              "strategy": "Use low heat from the start, stir frequently or continuously to prevent hot spots and skin formation, and monitor with a thermometer held in the milk without touching the pot bottom. As the temperature nears the bare simmer range, reduce to the lowest heat; when tiny bubbles form around the edges and the milk is about 180\u2013185\u00b0F, turn off the burner to avoid boiling or scorching.",
+              "source_task_ids": [
+                "heat-boil-03"
+              ]
+            },
+            {
+              "when_to_use": "When searing a raw steak to medium-rare with a crusted exterior using a heavy pan such as cast iron and high-smoke-point oil.",
+              "strategy": "Pat the steak dry first, preheat the cast-iron pan over high heat until very hot, add only a small amount of high-smoke-point oil until it shimmers or lightly smokes, then sear the steak undisturbed on the first side until a crust forms. Flip once, sear the second side, remove while the exterior is crusted and the center still feels springy-soft, then rest for several minutes before serving.",
+              "source_task_ids": [
+                "heat-cook-03"
+              ]
+            },
+            {
+              "when_to_use": "When warm, fluid chocolate ganache needs to be set into a scoopable truffle filling and a refrigerator plus shallow dish are available.",
+              "strategy": "Pour the ganache into a shallow dish to create a thinner layer, then refrigerate it until it is cool, thick, and firm enough to hold its shape when scooped. Prefer refrigeration over freezing to avoid making the ganache too hard or grainy.",
+              "source_task_ids": [
+                "cool-03"
+              ]
+            },
+            {
+              "when_to_use": "When asked to make a stable vinaigrette or stable oil-and-vinegar emulsion but only oil, vinegar, a bowl, and a whisk are available, with no emulsifier such as mustard, honey, egg yolk, or lecithin.",
+              "strategy": "Recognize that whisking vinegar while slowly drizzling in oil can create only a temporary cloudy emulsion. For a stable dressing, obtain or request an emulsifier; otherwise report that the available ingredients are insufficient for a stable vinaigrette and expect separation after resting.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            }
+          ]
+        },
+        "verdicts": [
+          {
+            "entry_index": 0,
+            "entry": {
+              "when_to_use": "When the goal is to melt a cold stick of butter into liquid and a stove with a saucepan is available.",
+              "strategy": "Place the butter in the saucepan, set it on a stove burner over low heat, and gently swirl or continue heating until all solid pieces disappear. Use low heat to melt evenly and avoid burning.",
+              "source_task_ids": [
+                "heat-melt-01"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the heat-melt family, but the applicability condition is limited to the exact seen instance: a cold stick of butter with a stove and saucepan. It would not fire for close variants in the same family such as melting chocolate or cheese, or even other meltable solids requiring low heat.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 1,
+            "entry": {
+              "when_to_use": "When the goal is to bring a pot of cold water to a rolling boil on a stove.",
+              "strategy": "Place the pot securely on an appropriate burner, turn that burner to high heat, then wait while monitoring. Continue heating past the first small bubbles and steam until large bubbles break continuously and vigorously across the entire water surface; only then consider it a rolling boil.",
+              "source_task_ids": [
+                "heat-boil-01"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the heat-boil task of bringing cold water to a rolling boil, and it would not mislead other families. However, the when_to_use is limited to the exact cold-water rolling-boil instance and would not cover close heat-boil variants such as boiling soup or other water-like liquids that tolerate high heat.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 2,
+            "entry": {
+              "when_to_use": "When frying a raw egg sunny-side-up in a non-stick pan with butter on a stove.",
+              "strategy": "Place the pan on the burner, heat it on medium-low, melt a small pat of butter until it coats the pan and lightly foams, then crack in the egg without breaking the yolk. Do not flip; cook gently until the white is fully set while the yolk remains intact and runny, then turn off the burner.",
+              "source_task_ids": [
+                "heat-cook-01"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the heat-cook family case of frying a raw egg sunny-side-up in a pan with butter. The strategy is appropriate and would not plausibly trigger for melting, boiling, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 3,
+            "entry": {
+              "when_to_use": "When the goal is to freeze liquid water into solid ice and a freezer plus an ice tray or similar shallow compartmented container are available.",
+              "strategy": "Transfer the water from the cup into the ice tray, place the filled tray flat and level inside the freezer, close the freezer door securely, and wait several hours until the water is fully frozen.",
+              "source_task_ids": [
+                "cool-01"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the cool family, specifically freezing water into ice, and would not mislead other families. However, the when_to_use is limited to the exact water-into-ice task with an ice tray, so it would not fire for close variants in the same cool family such as freezing another liquid or solidifying warm chocolate ganache.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 4,
+            "entry": {
+              "when_to_use": "When making a simple dough from flour, water, and salt in a mixing bowl using a spoon or similar utensil.",
+              "strategy": "Add flour first, mix in salt before fully hydrating, then add water gradually. Stir to hydrate and clump the mixture, continue stirring/folding to incorporate dry flour from the edges, and press/fold against the bowl until the dough becomes single and uniform.",
+              "source_task_ids": [
+                "mix-01"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the mix family, specifically making flour-water-salt dough, and would not mislead other families because the conditions are narrowly bounded to a mixing bowl and spoon for simple dough. However, it is too narrow to cover plausible close variants in the same mix family, such as whisking eggs and milk or combining oil and vinegar, so it only generalizes to the exact seen dough task rather than the broader family.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 5,
+            "entry": {
+              "when_to_use": "When melting chocolate for dipping and a stove, saucepan, water, and heat-safe bowl are available.",
+              "strategy": "Use a double boiler: add a shallow amount of water to the saucepan, bring it to a gentle simmer, place broken chocolate pieces in the heat-safe bowl, and set the bowl over the pan without letting it touch the water. Stir slowly and continuously; turn off the heat near the end and keep stirring until the chocolate is fully smooth to avoid scorching or overheating.",
+              "source_task_ids": [
+                "heat-melt-02"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct and safely bounded for melting chocolate with a double boiler, which belongs to heat-melt. However, the when_to_use is narrowly tied to the exact chocolate-for-dipping scenario and required tools, so it may not fire for close heat-melt variants such as melting other chocolate forms or chocolate for drizzle/sauce.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 6,
+            "entry": {
+              "when_to_use": "When a cold liquid food such as soup is in a pot and the goal is to bring it to a vigorous or rolling boil on a stove.",
+              "strategy": "Place the pot centered on a stove burner, turn the burner to high, stir early to distribute heat, then keep heating and monitor until large bubbles break rapidly across the surface.",
+              "source_task_ids": [
+                "heat-boil-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the heat-boil family: a cold liquid food in a pot with the explicit goal of reaching a vigorous or rolling boil. The high-heat stove strategy and bubbling endpoint match the family strategy and would not plausibly trigger for melting, cooling, mixing, or frying tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 7,
+            "entry": {
+              "when_to_use": "When cooking a cup of dry rice in a pot on a stove with water and a lid, and the goal is tender cooked rice.",
+              "strategy": "Put the rice in the pot, add about two cups of water, bring it to a boil on high heat, then cover and reduce to low for a gentle simmer. Simmer covered for about 18 minutes until most water is absorbed, then turn off the heat and let it rest covered for about 5 minutes to finish steaming.",
+              "source_task_ids": [
+                "heat-cook-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to cooking dry rice with water in a covered pot to achieve tender cooked rice, which is a heat-cook task. The strategy is appropriate and would not plausibly trigger for melting, boiling liquids alone, cooling/freezing, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 8,
+            "entry": {
+              "when_to_use": "When a warm bottled carbonated drink needs to be made cold to the touch quickly and both a refrigerator and freezer are available.",
+              "strategy": "Use the freezer for faster chilling: place the sealed bottle upright on a stable freezer shelf, close the freezer door, wait a moderate time such as about 25 minutes, then remove it and check that it feels cold without signs of freezing or bursting. Do not leave it in the freezer too long.",
+              "source_task_ids": [
+                "cool-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly scoped to a cool-family chilling task: making a warm bottled carbonated drink cold using a freezer. The strategy avoids heat and includes safeguards against over-freezing or bursting. Its applicability is narrow enough that it would not plausibly trigger on heat, cook, melt, boil, or mix tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 9,
+            "entry": {
+              "when_to_use": "When making an omelette base from raw eggs and milk in a mixing bowl with a whisk available.",
+              "strategy": "Crack the eggs into the bowl first, add the milk, then whisk. If yolks or white/milk streaks remain, continue whisking vigorously until the mixture is smooth and uniformly pale yellow.",
+              "source_task_ids": [
+                "mix-02"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the mix family example of whisking eggs and milk into an omelette base, and it would not mislead other families. However, the when_to_use is narrowly tied to the exact seen task with raw eggs, milk, a mixing bowl, and whisk, rather than covering plausible close variants of mixing ingredients into a uniform mixture.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 10,
+            "entry": {
+              "when_to_use": "When melting a block of cheddar or similar cheese for a sauce in a kitchen with milk, a saucepan, stove, and whisk.",
+              "strategy": "Pour a small amount of milk into the saucepan, warm it gently over low heat, break the cheese into small chunks, add the chunks to the warm milk, and whisk continuously over low heat until smooth to prevent scorching and clumping.",
+              "source_task_ids": [
+                "heat-melt-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to melting cheddar or similar cheese for a sauce and uses gentle low heat, matching the heat-melt family while avoiding high heat and irrelevant cooling/mixing-only strategies. Its conditions are specific enough that it should not plausibly trigger for boiling, cooking, cooling, or general mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 11,
+            "entry": {
+              "when_to_use": "When heating milk to a bare simmer on a stovetop without scalding it.",
+              "strategy": "Use low heat from the start, stir frequently or continuously to prevent hot spots and skin formation, and monitor with a thermometer held in the milk without touching the pot bottom. As the temperature nears the bare simmer range, reduce to the lowest heat; when tiny bubbles form around the edges and the milk is about 180\u2013185\u00b0F, turn off the burner to avoid boiling or scorching.",
+              "source_task_ids": [
+                "heat-boil-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the heat-boil milk/bare-simmer case, where low heat, stirring, monitoring temperature, and stopping before boiling help avoid scorching. It would not plausibly trigger for melting, cooling, cooking, or mixing tasks, nor for general water-like boiling tasks requiring high heat.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 12,
+            "entry": {
+              "when_to_use": "When searing a raw steak to medium-rare with a crusted exterior using a heavy pan such as cast iron and high-smoke-point oil.",
+              "strategy": "Pat the steak dry first, preheat the cast-iron pan over high heat until very hot, add only a small amount of high-smoke-point oil until it shimmers or lightly smokes, then sear the steak undisturbed on the first side until a crust forms. Flip once, sear the second side, remove while the exterior is crusted and the center still feels springy-soft, then rest for several minutes before serving.",
+              "source_task_ids": [
+                "heat-cook-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the heat-cook steak-searing case and gives an appropriate high-heat searing strategy for achieving a crusted exterior and medium-rare center. Its when_to_use is specific enough that it would not plausibly trigger for melting, boiling, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 13,
+            "entry": {
+              "when_to_use": "When warm, fluid chocolate ganache needs to be set into a scoopable truffle filling and a refrigerator plus shallow dish are available.",
+              "strategy": "Pour the ganache into a shallow dish to create a thinner layer, then refrigerate it until it is cool, thick, and firm enough to hold its shape when scooped. Prefer refrigeration over freezing to avoid making the ganache too hard or grainy.",
+              "source_task_ids": [
+                "cool-03"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is appropriate for the cool family and would not mislead other families, but the when_to_use is narrowly tied to the exact ganache truffle-filling instance rather than generalizing to plausible cooling/solidifying variants in the same family.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 14,
+            "entry": {
+              "when_to_use": "When asked to make a stable vinaigrette or stable oil-and-vinegar emulsion but only oil, vinegar, a bowl, and a whisk are available, with no emulsifier such as mustard, honey, egg yolk, or lecithin.",
+              "strategy": "Recognize that whisking vinegar while slowly drizzling in oil can create only a temporary cloudy emulsion. For a stable dressing, obtain or request an emulsifier; otherwise report that the available ingredients are insufficient for a stable vinaigrette and expect separation after resting.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to a specific mix-family case: making a stable oil-and-vinegar vinaigrette/emulsion with no emulsifier available. It recommends mixing only as a temporary emulsion and avoids heat/cooling or unrelated strategies. Its conditions are narrow enough that it would not plausibly trigger on heat, cool, or other mix tasks where it would mislead.",
+            "affected_families": []
+          }
+        ],
+        "task_sequence": [
+          "heat-melt-01",
+          "heat-boil-01",
+          "heat-cook-01",
+          "cool-01",
+          "mix-01",
+          "heat-melt-02",
+          "heat-boil-02",
+          "heat-cook-02",
+          "cool-02",
+          "mix-02",
+          "heat-melt-03",
+          "heat-boil-03",
+          "heat-cook-03",
+          "cool-03",
+          "mix-03"
+        ],
+        "coverage": {
+          "n_families_total": 5,
+          "n_families_covered": 5,
+          "n_tasks_total": 15,
+          "n_tasks_covered": 15,
+          "missing_families": [],
+          "missing_task_ids": []
+        }
+      },
+      "static_group": {
+        "arm": "static_group",
+        "consolidator_model": "gpt-5.5",
+        "judge_model": "gpt-5.5",
+        "final_memory": {
+          "entries": [
+            {
+              "when_to_use": "When melting solid butter in a saucepan on a stove.",
+              "strategy": "Place the butter in the saucepan, heat on low, and gently swirl or continue heating until the last solid piece disappears; use low heat to avoid burning.",
+              "source_task_ids": [
+                "heat-melt-01"
+              ]
+            },
+            {
+              "when_to_use": "When melting chocolate for a smooth liquid texture, especially for dipping, and a heat-safe bowl plus saucepan are available.",
+              "strategy": "Use indirect heat: simmer a shallow amount of water in a saucepan, place a heat-safe bowl of small chocolate pieces above the water without touching it, stir slowly as it melts, then turn off heat and keep stirring until smooth.",
+              "source_task_ids": [
+                "heat-melt-02"
+              ]
+            },
+            {
+              "when_to_use": "When melting cheddar or similar cheese into a sauce rather than simply liquefying it alone.",
+              "strategy": "Warm a small amount of milk over low heat, break the cheese into small chunks, add it gradually to the warm milk, and whisk continuously over low heat until smooth and creamy.",
+              "source_task_ids": [
+                "heat-melt-03"
+              ]
+            },
+            {
+              "when_to_use": "When melting solid food that can scorch, clump, or melt unevenly if heated too aggressively.",
+              "strategy": "Use gentle heat, reduce the solid into smaller pieces when practical, and stir, whisk, or swirl during heating to distribute heat evenly until fully melted.",
+              "source_task_ids": [
+                "heat-melt-01",
+                "heat-melt-02",
+                "heat-melt-03"
+              ]
+            },
+            {
+              "when_to_use": "When the goal is to bring a pot of water or soup from cold to a rolling/vigorous boil on a stove.",
+              "strategy": "Place the pot centered on a stove burner, turn the burner to high, and wait while monitoring. For thicker or mixed liquids like soup, stir during heating to distribute heat evenly. Continue heating until large bubbles break rapidly and continuously across the surface.",
+              "source_task_ids": [
+                "heat-boil-01",
+                "heat-boil-02"
+              ]
+            },
+            {
+              "when_to_use": "When heating milk to a bare simmer without scalding or boiling it.",
+              "strategy": "Use gentle heat: place the pot on the burner, set the burner to low, stir regularly or continuously to prevent hot spots and skin, and monitor with a thermometer without touching the pot bottom. As the milk approaches about 180\u2013185\u00b0F with tiny bubbles around the edge and light steam, reduce heat or turn the burner off to avoid scalding.",
+              "source_task_ids": [
+                "heat-boil-03"
+              ]
+            },
+            {
+              "when_to_use": "When frying a sunny-side-up egg in a non-stick pan with butter and the goal is a set white with a runny intact yolk.",
+              "strategy": "Heat the pan on medium-low, melt a small pat of butter until it coats the pan and lightly foams, crack in the egg without breaking the yolk, do not flip it, and cook gently until the white is fully opaque while the yolk remains runny; then turn off the burner.",
+              "source_task_ids": [
+                "heat-cook-01"
+              ]
+            },
+            {
+              "when_to_use": "When cooking dry white rice on a stove using a pot with a lid.",
+              "strategy": "Put the rice in the pot with about two parts water to one part rice, bring it to a boil on high, cover and reduce to low for a gentle simmer, cook until the water is mostly absorbed and the grains are soft, then turn off the heat and let the covered pot rest briefly to finish steaming.",
+              "source_task_ids": [
+                "heat-cook-02"
+              ]
+            },
+            {
+              "when_to_use": "When searing a raw steak to medium-rare with a crusted exterior in a cast-iron pan.",
+              "strategy": "Pat the steak dry, preheat the cast-iron pan on high until very hot, add a small amount of high-smoke-point oil, place the steak in and leave it undisturbed until a crust forms, flip once to sear the second side, remove while the center is still springy-soft for medium-rare, and rest the steak for several minutes before serving.",
+              "source_task_ids": [
+                "heat-cook-03"
+              ]
+            },
+            {
+              "when_to_use": "When a liquid ingredient or drink must be frozen into solid ice and a freezer plus a suitable shallow/segmented container are available.",
+              "strategy": "Transfer the liquid into an appropriate container such as an ice tray, place it flat and level in the freezer, close the freezer, and wait several hours until fully solid.",
+              "source_task_ids": [
+                "cool-01"
+              ]
+            },
+            {
+              "when_to_use": "When a bottled carbonated drink is warm and the goal is to make it cold to the touch quickly without freezing it or risking bursting.",
+              "strategy": "Place the bottle upright in the freezer, close the door, wait only a moderate short time such as about 25 minutes, then remove it and check that it is cold but not frozen.",
+              "source_task_ids": [
+                "cool-02"
+              ]
+            },
+            {
+              "when_to_use": "When warm ganache or a similar soft confection needs to set into a scoopable filling rather than freeze hard.",
+              "strategy": "Spread it into a shallow dish to increase surface area, refrigerate rather than freeze, and leave it until cool, thick, and firm enough to hold its shape.",
+              "source_task_ids": [
+                "cool-03"
+              ]
+            },
+            {
+              "when_to_use": "When combining dry ingredients with liquid into a uniform dough or paste in a bowl, especially when there is risk of dry pockets or over-wetting.",
+              "strategy": "Add dry ingredients and seasonings to the bowl first, add liquid gradually, then stir, fold, and press the mixture against the bowl until no dry patches remain and the mass is uniform.",
+              "source_task_ids": [
+                "mix-01"
+              ]
+            },
+            {
+              "when_to_use": "When blending liquid ingredients such as eggs and milk into a uniform mixture with visible streaks or separated phases.",
+              "strategy": "Place the ingredients in the bowl, use the whisk to break up thicker components such as yolks, and continue whisking vigorously until the color and texture are consistent with no visible streaks.",
+              "source_task_ids": [
+                "mix-02"
+              ]
+            },
+            {
+              "when_to_use": "When trying to make a stable oil-and-vinegar vinaigrette but only oil and vinegar are available and no emulsifier such as mustard, honey, or egg yolk is present.",
+              "strategy": "Recognize that vigorous whisking and slowly drizzling oil into vinegar can create only a temporary emulsion; do not expect it to remain stable without an emulsifier, and report the ingredient limitation if separation occurs.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            }
+          ]
+        },
+        "verdicts": [
+          {
+            "entry_index": 0,
+            "entry": {
+              "when_to_use": "When melting solid butter in a saucepan on a stove.",
+              "strategy": "Place the butter in the saucepan, heat on low, and gently swirl or continue heating until the last solid piece disappears; use low heat to avoid burning.",
+              "source_task_ids": [
+                "heat-melt-01"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the heat-melt family, but the applicability condition is limited specifically to melting solid butter in a saucepan on a stove. It would not fire for close variants in the same family such as melting chocolate or cheese on low heat.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 1,
+            "entry": {
+              "when_to_use": "When melting chocolate for a smooth liquid texture, especially for dipping, and a heat-safe bowl plus saucepan are available.",
+              "strategy": "Use indirect heat: simmer a shallow amount of water in a saucepan, place a heat-safe bowl of small chocolate pieces above the water without touching it, stir slowly as it melts, then turn off heat and keep stirring until smooth.",
+              "source_task_ids": [
+                "heat-melt-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to melting chocolate into a smooth liquid, which is a valid heat-melt task. The indirect gentle-heat strategy is appropriate for chocolate and would not plausibly trigger for boiling, cooking, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 2,
+            "entry": {
+              "when_to_use": "When melting cheddar or similar cheese into a sauce rather than simply liquefying it alone.",
+              "strategy": "Warm a small amount of milk over low heat, break the cheese into small chunks, add it gradually to the warm milk, and whisk continuously over low heat until smooth and creamy.",
+              "source_task_ids": [
+                "heat-melt-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to melting cheddar or similar cheese into a sauce, which is a close variant of the heat-melt family involving low heat and gradual warming. It avoids broad triggering for boiling, cooling, cooking, or general mixing tasks, and the strategy would help achieve a smooth melted cheese sauce without scorching.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 3,
+            "entry": {
+              "when_to_use": "When melting solid food that can scorch, clump, or melt unevenly if heated too aggressively.",
+              "strategy": "Use gentle heat, reduce the solid into smaller pieces when practical, and stir, whisk, or swirl during heating to distribute heat evenly until fully melted.",
+              "source_task_ids": [
+                "heat-melt-01",
+                "heat-melt-02",
+                "heat-melt-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to solid-to-liquid melting of meltable solid foods and recommends gentle heat to avoid scorching or uneven melting, which matches the heat-melt family. It would not plausibly trigger for boiling, cooking, cooling/freezing, or mixing-only tasks because its condition explicitly requires melting a solid food.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 4,
+            "entry": {
+              "when_to_use": "When the goal is to bring a pot of water or soup from cold to a rolling/vigorous boil on a stove.",
+              "strategy": "Place the pot centered on a stove burner, turn the burner to high, and wait while monitoring. For thicker or mixed liquids like soup, stir during heating to distribute heat evenly. Continue heating until large bubbles break rapidly and continuously across the surface.",
+              "source_task_ids": [
+                "heat-boil-01",
+                "heat-boil-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry correctly targets the heat-boil family for water or soup brought to a rolling/vigorous boil on a stove, uses high heat, and includes appropriate monitoring/stirring for soup. Its applicability is bounded away from melting, cooling, mixing, and heat-sensitive liquids like milk or chocolate, so it should not misfire on other families.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 5,
+            "entry": {
+              "when_to_use": "When heating milk to a bare simmer without scalding or boiling it.",
+              "strategy": "Use gentle heat: place the pot on the burner, set the burner to low, stir regularly or continuously to prevent hot spots and skin, and monitor with a thermometer without touching the pot bottom. As the milk approaches about 180\u2013185\u00b0F with tiny bubbles around the edge and light steam, reduce heat or turn the burner off to avoid scalding.",
+              "source_task_ids": [
+                "heat-boil-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the heat-boil family\u2019s heat-sensitive milk simmer case and gives an appropriate gentle-heating strategy to avoid scalding. Its when_to_use is narrow enough that it would not plausibly trigger for melting, freezing, mixing, or frying tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 6,
+            "entry": {
+              "when_to_use": "When frying a sunny-side-up egg in a non-stick pan with butter and the goal is a set white with a runny intact yolk.",
+              "strategy": "Heat the pan on medium-low, melt a small pat of butter until it coats the pan and lightly foams, crack in the egg without breaking the yolk, do not flip it, and cook gently until the white is fully opaque while the yolk remains runny; then turn off the burner.",
+              "source_task_ids": [
+                "heat-cook-01"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to frying a sunny-side-up egg with butter to achieve set whites and a runny yolk, which fits the heat-cook family. The strategy uses appropriate stovetop heat and fat, avoids flipping, and would not plausibly misfire on melting, boiling, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 7,
+            "entry": {
+              "when_to_use": "When cooking dry white rice on a stove using a pot with a lid.",
+              "strategy": "Put the rice in the pot with about two parts water to one part rice, bring it to a boil on high, cover and reduce to low for a gentle simmer, cook until the water is mostly absorbed and the grains are soft, then turn off the heat and let the covered pot rest briefly to finish steaming.",
+              "source_task_ids": [
+                "heat-cook-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry gives a correct stovetop strategy for cooking dry white rice and its when_to_use is narrowly bounded to that heat-cook subtask. It would not plausibly trigger for melting, boiling-only, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 8,
+            "entry": {
+              "when_to_use": "When searing a raw steak to medium-rare with a crusted exterior in a cast-iron pan.",
+              "strategy": "Pat the steak dry, preheat the cast-iron pan on high until very hot, add a small amount of high-smoke-point oil, place the steak in and leave it undisturbed until a crust forms, flip once to sear the second side, remove while the center is still springy-soft for medium-rare, and rest the steak for several minutes before serving.",
+              "source_task_ids": [
+                "heat-cook-03"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the heat-cook steak-searing task and would not mislead other families, but the when_to_use is narrowly tied to the exact seen instance: raw steak, medium-rare, crusted exterior, cast-iron pan. It would likely fail to retrieve for close heat-cook variants such as searing steak in another heavy pan or to a different doneness.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 9,
+            "entry": {
+              "when_to_use": "When a liquid ingredient or drink must be frozen into solid ice and a freezer plus a suitable shallow/segmented container are available.",
+              "strategy": "Transfer the liquid into an appropriate container such as an ice tray, place it flat and level in the freezer, close the freezer, and wait several hours until fully solid.",
+              "source_task_ids": [
+                "cool-01"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the cool family: freezing a liquid ingredient or drink into solid ice using a freezer and suitable container. It would help for liquid-to-solid freezing tasks and does not suggest heat, mixing, or boiling, so it is unlikely to misfire on other families.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 10,
+            "entry": {
+              "when_to_use": "When a bottled carbonated drink is warm and the goal is to make it cold to the touch quickly without freezing it or risking bursting.",
+              "strategy": "Place the bottle upright in the freezer, close the door, wait only a moderate short time such as about 25 minutes, then remove it and check that it is cold but not frozen.",
+              "source_task_ids": [
+                "cool-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to a cool-family chilling task: making a warm carbonated drink cold without freezing. The freezer strategy with limited time is appropriate and would not plausibly trigger for heat, cook, or mix families because the conditions specify cooling a bottled drink.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 11,
+            "entry": {
+              "when_to_use": "When warm ganache or a similar soft confection needs to set into a scoopable filling rather than freeze hard.",
+              "strategy": "Spread it into a shallow dish to increase surface area, refrigerate rather than freeze, and leave it until cool, thick, and firm enough to hold its shape.",
+              "source_task_ids": [
+                "cool-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to cooling/setting warm ganache or similar soft confections, and specifically avoids freezing hard. It would help on the cool family\u2019s ganache-style solidification tasks and is unlikely to trigger for heating, cooking, boiling, or mixing goals.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 12,
+            "entry": {
+              "when_to_use": "When combining dry ingredients with liquid into a uniform dough or paste in a bowl, especially when there is risk of dry pockets or over-wetting.",
+              "strategy": "Add dry ingredients and seasonings to the bowl first, add liquid gradually, then stir, fold, and press the mixture against the bowl until no dry patches remain and the mass is uniform.",
+              "source_task_ids": [
+                "mix-01"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry correctly describes a mixing strategy for combining dry ingredients with liquid into a uniform dough or paste, including gradual liquid addition and stirring/pressing to eliminate dry patches. Its applicability is bounded to a specific mix-family scenario and would not plausibly trigger for heat, boil, cook, or cool tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 13,
+            "entry": {
+              "when_to_use": "When blending liquid ingredients such as eggs and milk into a uniform mixture with visible streaks or separated phases.",
+              "strategy": "Place the ingredients in the bowl, use the whisk to break up thicker components such as yolks, and continue whisking vigorously until the color and texture are consistent with no visible streaks.",
+              "source_task_ids": [
+                "mix-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry correctly applies to the mix family for liquid ingredients that need whisking into a uniform mixture, such as eggs and milk. Its applicability is bounded to blending/mixing and does not suggest heat or cooling, so it would not plausibly misfire on other families.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 14,
+            "entry": {
+              "when_to_use": "When trying to make a stable oil-and-vinegar vinaigrette but only oil and vinegar are available and no emulsifier such as mustard, honey, or egg yolk is present.",
+              "strategy": "Recognize that vigorous whisking and slowly drizzling oil into vinegar can create only a temporary emulsion; do not expect it to remain stable without an emulsifier, and report the ingredient limitation if separation occurs.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The entry is relevant to the mix family and would not mislead other families, but its applicability is narrowed to the exact vinaigrette-without-emulsifier scenario rather than generalizing to plausible mix-family variants such as other vinaigrettes or ingredient-combining tasks.",
+            "affected_families": []
+          }
+        ],
+        "task_sequence": [
+          "heat-melt-01",
+          "heat-boil-01",
+          "heat-cook-01",
+          "cool-01",
+          "mix-01",
+          "heat-melt-02",
+          "heat-boil-02",
+          "heat-cook-02",
+          "cool-02",
+          "mix-02",
+          "heat-melt-03",
+          "heat-boil-03",
+          "heat-cook-03",
+          "cool-03",
+          "mix-03"
+        ],
+        "coverage": {
+          "n_families_total": 5,
+          "n_families_covered": 5,
+          "n_tasks_total": 15,
+          "n_tasks_covered": 15,
+          "missing_families": [],
+          "missing_task_ids": []
+        }
+      },
+      "cumulative": {
+        "arm": "cumulative",
+        "consolidator_model": "gpt-5.5",
+        "judge_model": "gpt-5.5",
+        "final_memory": {
+          "entries": [
+            {
+              "when_to_use": "When trying to make a stable vinaigrette from only oil and vinegar, with no emulsifier such as mustard, honey, or egg yolk available.",
+              "strategy": "Whisk the vinegar while slowly drizzling in the oil to create only a temporary emulsion. Do not expect it to remain stable; without an emulsifier, the oil and vinegar will separate after sitting.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            }
+          ]
+        },
+        "verdicts": [
+          {
+            "entry_index": 0,
+            "entry": {
+              "when_to_use": "When trying to make a stable vinaigrette from only oil and vinegar, with no emulsifier such as mustard, honey, or egg yolk available.",
+              "strategy": "Whisk the vinegar while slowly drizzling in the oil to create only a temporary emulsion. Do not expect it to remain stable; without an emulsifier, the oil and vinegar will separate after sitting.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to a specific mix-family vinaigrette case and gives an appropriate mixing strategy while noting the limitation that oil and vinegar alone cannot remain stably emulsified without an emulsifier. It would not plausibly trigger on heat, boil, cook, or cool tasks.",
+            "affected_families": []
+          }
+        ],
+        "task_sequence": [
+          "heat-melt-01",
+          "heat-boil-01",
+          "heat-cook-01",
+          "cool-01",
+          "mix-01",
+          "heat-melt-02",
+          "heat-boil-02",
+          "heat-cook-02",
+          "cool-02",
+          "mix-02",
+          "heat-melt-03",
+          "heat-boil-03",
+          "heat-cook-03",
+          "cool-03",
+          "mix-03"
+        ],
+        "coverage": {
+          "n_families_total": 5,
+          "n_families_covered": 1,
+          "n_tasks_total": 15,
+          "n_tasks_covered": 1,
+          "missing_families": [
+            "cool",
+            "heat-boil",
+            "heat-cook",
+            "heat-melt"
+          ],
+          "missing_task_ids": [
+            "cool-01",
+            "cool-02",
+            "cool-03",
+            "heat-boil-01",
+            "heat-boil-02",
+            "heat-boil-03",
+            "heat-cook-01",
+            "heat-cook-02",
+            "heat-cook-03",
+            "heat-melt-01",
+            "heat-melt-02",
+            "heat-melt-03",
+            "mix-01",
+            "mix-02"
+          ]
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "fresh": {
+        "arm": "fresh",
+        "consolidator_model": "gpt-5.5",
+        "judge_model": "gpt-5.5",
+        "final_memory": {
+          "entries": [
+            {
+              "when_to_use": "When the goal is to melt a cold solid fat such as a stick of butter in a kitchen with a stove and saucepan available.",
+              "strategy": "Place the butter in the saucepan, put the saucepan securely on a stove burner, turn the burner to low heat, and wait briefly until the butter liquefies. Use low heat to melt gently without burning.",
+              "source_task_ids": [
+                "heat-melt-01"
+              ]
+            },
+            {
+              "when_to_use": "When the goal is to bring cold water in a pot to a rolling boil using a stovetop.",
+              "strategy": "Place the pot securely on an available burner, turn that burner to high heat, then wait and continue heating until large bubbles rise rapidly and the surface churns vigorously across the entire pot. Confirm it maintains vigorous bubbling without stirring before considering it a rolling boil.",
+              "source_task_ids": [
+                "heat-boil-01"
+              ]
+            },
+            {
+              "when_to_use": "When frying a raw egg sunny-side-up in a non-stick pan with butter on a stove.",
+              "strategy": "Place the pan on the burner, heat it gently on medium-low, melt a small pat of butter until lightly foaming, then crack in the egg. Cook uncovered without flipping until the white is fully set while the yolk remains intact and runny, then turn off the heat promptly to avoid overcooking.",
+              "source_task_ids": [
+                "heat-cook-01"
+              ]
+            },
+            {
+              "when_to_use": "When the goal is to freeze liquid water in a kitchen environment with access to a freezer and an empty ice tray.",
+              "strategy": "Pour the water into the ice tray compartments, place the filled tray flat and level inside the freezer, close the freezer door to keep cold air in, and wait several hours until the water freezes solid.",
+              "source_task_ids": [
+                "cool-01"
+              ]
+            },
+            {
+              "when_to_use": "When combining flour, salt, and water into a uniform dough in a bowl.",
+              "strategy": "Add the flour and salt first, then stir them dry so the salt disperses evenly. Add water gradually, mixing thoroughly after each addition; if dry flour remains, add only a small splash more water and continue stirring/pressing until the dough comes together uniformly.",
+              "source_task_ids": [
+                "mix-01"
+              ]
+            },
+            {
+              "when_to_use": "When melting chocolate for dipping or coating in a kitchen with a stove, saucepan, water, and a heat-safe bowl.",
+              "strategy": "Use gentle indirect heat: put a shallow amount of water in the saucepan, warm it on low to a light simmer, break the chocolate into small pieces in the heat-safe bowl, set the bowl over the saucepan without letting it touch the water, and stir slowly until the chocolate is smooth and glossy. Keep heat low to avoid scorching.",
+              "source_task_ids": [
+                "heat-melt-02"
+              ]
+            },
+            {
+              "when_to_use": "When a pot of cold soup or similar liquid food needs to be brought to a vigorous boil on a stovetop.",
+              "strategy": "Place the pot securely on a stove burner, turn the burner to high heat, and wait while it heats. Once steam and small edge bubbles appear, stir to distribute heat evenly and reduce scorching risk, then continue heating on high until large bubbles rapidly break across the entire surface.",
+              "source_task_ids": [
+                "heat-boil-02"
+              ]
+            },
+            {
+              "when_to_use": "When cooking dry rice in a pot on a stove with water and a lid, and the goal is tender cooked rice.",
+              "strategy": "Combine the rice with about twice as much water in the pot, place it on the stove, bring the water to a boil on high heat, then cover the pot and reduce to low heat for a gentle simmer. Let it simmer until most water is absorbed, about 18 minutes for one cup of rice, then turn off the stove and check tenderness before serving.",
+              "source_task_ids": [
+                "heat-cook-02"
+              ]
+            },
+            {
+              "when_to_use": "When a warm bottled drink needs to become cold to the touch and a refrigerator is available.",
+              "strategy": "Place the bottle upright on a refrigerator shelf, close the door to retain cold air, wait long enough for chilling (about 2 hours for a warm soda bottle), then open the refrigerator and touch/check the bottle to confirm it feels cold.",
+              "source_task_ids": [
+                "cool-02"
+              ]
+            },
+            {
+              "when_to_use": "When making an omelette base from raw eggs and milk in a mixing bowl, and the goal is a smooth uniform mixture.",
+              "strategy": "Crack the eggs into the bowl first, add a small amount of milk, then whisk vigorously in circular motions. If any visible yolk or egg-white streaks remain, continue whisking until the liquid is smooth, pale yellow, and uniform throughout.",
+              "source_task_ids": [
+                "mix-02"
+              ]
+            },
+            {
+              "when_to_use": "When melting a block of cheddar cheese for a cheese sauce in a kitchen with a stove, saucepan, milk, and whisk.",
+              "strategy": "Use milk as the sauce base, warm it gently in a saucepan over low heat, add the cheddar, and whisk continuously while maintaining low heat until the cheese breaks down and melts into a smooth sauce. Avoid high heat to reduce scorching or separation.",
+              "source_task_ids": [
+                "heat-melt-03"
+              ]
+            },
+            {
+              "when_to_use": "When heating milk to a bare simmer without scalding or boiling over, especially from cold in a pot on a stove.",
+              "strategy": "Use low heat, stir slowly and frequently to prevent hot spots and sticking, and monitor with a thermometer held in the milk without touching the pot bottom. Watch for faint steam and tiny bubbles around the edge; when the milk reaches about 180\u00b0F with edge bubbles, turn off the burner promptly.",
+              "source_task_ids": [
+                "heat-boil-03"
+              ]
+            },
+            {
+              "when_to_use": "When searing a raw steak for a crusted exterior while aiming for medium-rare doneness, especially with a cast-iron pan and high-smoke-point oil available.",
+              "strategy": "Preheat the cast-iron pan over high heat until very hot. Pat the steak thoroughly dry before cooking. Add only a thin coating of high-smoke-point oil and wait until it shimmers or lightly smokes. Lay the steak flat, leave it undisturbed until a dark crust forms, flip once with tongs, and remove it when the second side is seared and the steak feels springy with some give; rest it before serving.",
+              "source_task_ids": [
+                "heat-cook-03"
+              ]
+            },
+            {
+              "when_to_use": "When warm chocolate ganache needs to be solidified into a scoopable truffle filling and a refrigerator plus shallow dish are available.",
+              "strategy": "Pour the ganache into a shallow dish to form a thinner, even layer, refrigerate it flat, check firmness by lightly pressing the surface, and continue chilling until it is uniformly firm but not frozen before removing it for scooping or shaping.",
+              "source_task_ids": [
+                "cool-03"
+              ]
+            },
+            {
+              "when_to_use": "When asked to make a stable vinaigrette from only oil, vinegar, a bowl, and a whisk, with no emulsifier such as mustard, egg yolk, honey, or similar ingredient available.",
+              "strategy": "Recognize that whisking oil slowly into vinegar can create only a temporary emulsion. Whisk vigorously while adding oil slowly if a short-lived mixture is acceptable, but do not expect or claim a stable dressing; report that stability requires an emulsifier.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            }
+          ]
+        },
+        "verdicts": [
+          {
+            "entry_index": 0,
+            "entry": {
+              "when_to_use": "When the goal is to melt a cold solid fat such as a stick of butter in a kitchen with a stove and saucepan available.",
+              "strategy": "Place the butter in the saucepan, put the saucepan securely on a stove burner, turn the burner to low heat, and wait briefly until the butter liquefies. Use low heat to melt gently without burning.",
+              "source_task_ids": [
+                "heat-melt-01"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the heat-melt family, specifically melting butter/fat with low heat in a saucepan. However, the when_to_use is limited to a cold solid fat such as a stick of butter and would not fire for close variants in the same family such as melting chocolate or cheese, which are also meltable solids requiring bounded low heat. It is not broad enough to misfire on other families.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 1,
+            "entry": {
+              "when_to_use": "When the goal is to bring cold water in a pot to a rolling boil using a stovetop.",
+              "strategy": "Place the pot securely on an available burner, turn that burner to high heat, then wait and continue heating until large bubbles rise rapidly and the surface churns vigorously across the entire pot. Confirm it maintains vigorous bubbling without stirring before considering it a rolling boil.",
+              "source_task_ids": [
+                "heat-boil-01"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the heat-boil family, but the when_to_use is limited to the exact cold-water rolling-boil stovetop task and would not fire for close heat-boil variants such as boiling soup or bringing non-cold water to a boil.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 2,
+            "entry": {
+              "when_to_use": "When frying a raw egg sunny-side-up in a non-stick pan with butter on a stove.",
+              "strategy": "Place the pan on the burner, heat it gently on medium-low, melt a small pat of butter until lightly foaming, then crack in the egg. Cook uncovered without flipping until the white is fully set while the yolk remains intact and runny, then turn off the heat promptly to avoid overcooking.",
+              "source_task_ids": [
+                "heat-cook-01"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for frying a sunny-side-up egg, but the when_to_use is limited to the exact seen setup: raw egg sunny-side-up in a non-stick pan with butter on a stove. It would not fire for close variants in the same heat-cook family, such as using a regular skillet, oil instead of butter, or similar egg-frying tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 3,
+            "entry": {
+              "when_to_use": "When the goal is to freeze liquid water in a kitchen environment with access to a freezer and an empty ice tray.",
+              "strategy": "Pour the water into the ice tray compartments, place the filled tray flat and level inside the freezer, close the freezer door to keep cold air in, and wait several hours until the water freezes solid.",
+              "source_task_ids": [
+                "cool-01"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for freezing liquid water using an ice tray, but the when_to_use is limited to the exact seen task setup rather than broader cool-family variants such as freezing other liquids, chilling drinks, or solidifying warm chocolate ganache.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 4,
+            "entry": {
+              "when_to_use": "When combining flour, salt, and water into a uniform dough in a bowl.",
+              "strategy": "Add the flour and salt first, then stir them dry so the salt disperses evenly. Add water gradually, mixing thoroughly after each addition; if dry flour remains, add only a small splash more water and continue stirring/pressing until the dough comes together uniformly.",
+              "source_task_ids": [
+                "mix-01"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the mix family, specifically making a flour-salt-water dough. However, the when_to_use is narrowly tied to the exact ingredients and setup from the seen task, so it would not fire for plausible close mix-family variants such as whisking eggs and milk or combining oil and vinegar.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 5,
+            "entry": {
+              "when_to_use": "When melting chocolate for dipping or coating in a kitchen with a stove, saucepan, water, and a heat-safe bowl.",
+              "strategy": "Use gentle indirect heat: put a shallow amount of water in the saucepan, warm it on low to a light simmer, break the chocolate into small pieces in the heat-safe bowl, set the bowl over the saucepan without letting it touch the water, and stir slowly until the chocolate is smooth and glossy. Keep heat low to avoid scorching.",
+              "source_task_ids": [
+                "heat-melt-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to melting chocolate, a heat-melt task, and uses gentle low indirect heat appropriate for heat-sensitive meltable solids. Its conditions are narrow enough that it would not plausibly trigger for boiling, cooking, cooling, or mixing tasks, and it covers plausible chocolate-melting variants beyond the exact source task.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 6,
+            "entry": {
+              "when_to_use": "When a pot of cold soup or similar liquid food needs to be brought to a vigorous boil on a stovetop.",
+              "strategy": "Place the pot securely on a stove burner, turn the burner to high heat, and wait while it heats. Once steam and small edge bubbles appear, stir to distribute heat evenly and reduce scorching risk, then continue heating on high until large bubbles rapidly break across the entire surface.",
+              "source_task_ids": [
+                "heat-boil-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to cold soup or similar liquid foods that need a vigorous boil on a stovetop, matching the heat-boil family. The high-heat strategy and waiting for rapid bubbles across the surface are appropriate, and it does not broaden to melting, cooling, mixing, or cooking tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 7,
+            "entry": {
+              "when_to_use": "When cooking dry rice in a pot on a stove with water and a lid, and the goal is tender cooked rice.",
+              "strategy": "Combine the rice with about twice as much water in the pot, place it on the stove, bring the water to a boil on high heat, then cover the pot and reduce to low heat for a gentle simmer. Let it simmer until most water is absorbed, about 18 minutes for one cup of rice, then turn off the stove and check tenderness before serving.",
+              "source_task_ids": [
+                "heat-cook-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry gives a correct rice-cooking strategy and its when_to_use is narrowly bounded to cooking dry rice with water in a lidded pot on a stove for tender cooked rice. It fits the heat-cook family and is unlikely to trigger on boiling-only, melting, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 8,
+            "entry": {
+              "when_to_use": "When a warm bottled drink needs to become cold to the touch and a refrigerator is available.",
+              "strategy": "Place the bottle upright on a refrigerator shelf, close the door to retain cold air, wait long enough for chilling (about 2 hours for a warm soda bottle), then open the refrigerator and touch/check the bottle to confirm it feels cold.",
+              "source_task_ids": [
+                "cool-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to a cooling task: making a warm bottled drink cold to the touch. The refrigerator strategy is appropriate for chilling and would not plausibly trigger for melting, boiling, cooking, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 9,
+            "entry": {
+              "when_to_use": "When making an omelette base from raw eggs and milk in a mixing bowl, and the goal is a smooth uniform mixture.",
+              "strategy": "Crack the eggs into the bowl first, add a small amount of milk, then whisk vigorously in circular motions. If any visible yolk or egg-white streaks remain, continue whisking until the liquid is smooth, pale yellow, and uniform throughout.",
+              "source_task_ids": [
+                "mix-02"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the mix family, but the when_to_use is limited to the exact seen instance of making an omelette base from raw eggs and milk. It would not fire for close mix-family variants such as other egg mixtures, batter-like mixtures, doughs, or dressings that also require combining ingredients uniformly.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 10,
+            "entry": {
+              "when_to_use": "When melting a block of cheddar cheese for a cheese sauce in a kitchen with a stove, saucepan, milk, and whisk.",
+              "strategy": "Use milk as the sauce base, warm it gently in a saucepan over low heat, add the cheddar, and whisk continuously while maintaining low heat until the cheese breaks down and melts into a smooth sauce. Avoid high heat to reduce scorching or separation.",
+              "source_task_ids": [
+                "heat-melt-03"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the seen heat-melt cheddar cheese sauce task, but the when_to_use is tied to the exact ingredient, goal, and available tools rather than generalizing to plausible heat-melt variants such as other meltable solids or other cheeses.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 11,
+            "entry": {
+              "when_to_use": "When heating milk to a bare simmer without scalding or boiling over, especially from cold in a pot on a stove.",
+              "strategy": "Use low heat, stir slowly and frequently to prevent hot spots and sticking, and monitor with a thermometer held in the milk without touching the pot bottom. Watch for faint steam and tiny bubbles around the edge; when the milk reaches about 180\u00b0F with edge bubbles, turn off the burner promptly.",
+              "source_task_ids": [
+                "heat-boil-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the heat-boil family\u2019s heat-sensitive milk simmer case. It avoids the high-heat boiling strategy that would scald milk and gives appropriate low-heat monitoring steps. Its when_to_use is narrow enough that it should not trigger for melting, cooling, mixing, or cooking tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 12,
+            "entry": {
+              "when_to_use": "When searing a raw steak for a crusted exterior while aiming for medium-rare doneness, especially with a cast-iron pan and high-smoke-point oil available.",
+              "strategy": "Preheat the cast-iron pan over high heat until very hot. Pat the steak thoroughly dry before cooking. Add only a thin coating of high-smoke-point oil and wait until it shimmers or lightly smokes. Lay the steak flat, leave it undisturbed until a dark crust forms, flip once with tongs, and remove it when the second side is seared and the steak feels springy with some give; rest it before serving.",
+              "source_task_ids": [
+                "heat-cook-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the heat-cook steak-searing task: raw steak, crusted exterior, medium-rare doneness. The high-heat cast-iron strategy is appropriate for that cooking subtask and would not plausibly trigger for melting, boiling, cooling, or mixing families.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 13,
+            "entry": {
+              "when_to_use": "When warm chocolate ganache needs to be solidified into a scoopable truffle filling and a refrigerator plus shallow dish are available.",
+              "strategy": "Pour the ganache into a shallow dish to form a thinner, even layer, refrigerate it flat, check firmness by lightly pressing the surface, and continue chilling until it is uniformly firm but not frozen before removing it for scooping or shaping.",
+              "source_task_ids": [
+                "cool-03"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the cool family instance of solidifying warm chocolate ganache, and it would not mislead other families. However, the when_to_use is narrowly tied to the exact ganache truffle-filling task and specific tools, so it would not generalize to close cooling/solidifying variants in the same family.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 14,
+            "entry": {
+              "when_to_use": "When asked to make a stable vinaigrette from only oil, vinegar, a bowl, and a whisk, with no emulsifier such as mustard, egg yolk, honey, or similar ingredient available.",
+              "strategy": "Recognize that whisking oil slowly into vinegar can create only a temporary emulsion. Whisk vigorously while adding oil slowly if a short-lived mixture is acceptable, but do not expect or claim a stable dressing; report that stability requires an emulsifier.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The entry is relevant to the mix family and gives a correct caveat for vinaigrette without an emulsifier, but its when_to_use is narrowly tied to the exact ingredients and tools from one task instance. It would not generalize to close variants such as different stirring tools, containers, or similar emulsification tasks without an emulsifier.",
+            "affected_families": []
+          }
+        ],
+        "task_sequence": [
+          "heat-melt-01",
+          "heat-boil-01",
+          "heat-cook-01",
+          "cool-01",
+          "mix-01",
+          "heat-melt-02",
+          "heat-boil-02",
+          "heat-cook-02",
+          "cool-02",
+          "mix-02",
+          "heat-melt-03",
+          "heat-boil-03",
+          "heat-cook-03",
+          "cool-03",
+          "mix-03"
+        ],
+        "coverage": {
+          "n_families_total": 5,
+          "n_families_covered": 5,
+          "n_tasks_total": 15,
+          "n_tasks_covered": 15,
+          "missing_families": [],
+          "missing_task_ids": []
+        }
+      },
+      "static_group": {
+        "arm": "static_group",
+        "consolidator_model": "gpt-5.5",
+        "judge_model": "gpt-5.5",
+        "final_memory": {
+          "entries": [
+            {
+              "when_to_use": "When melting foods that can scorch, separate, or burn easily on a stove, such as butter, chocolate, or cheese.",
+              "strategy": "Use gentle low heat rather than high heat, and give the food time to melt gradually. Keep heating only until it becomes liquid or smooth, avoiding overheating.",
+              "source_task_ids": [
+                "heat-melt-01",
+                "heat-melt-02",
+                "heat-melt-03"
+              ]
+            },
+            {
+              "when_to_use": "When melting chocolate into a smooth liquid for dipping or coating.",
+              "strategy": "Use indirect gentle heat with a double boiler: simmer a shallow amount of water in a saucepan, place chocolate pieces in a heat-safe bowl above the water without touching it, and stir slowly until glossy and smooth.",
+              "source_task_ids": [
+                "heat-melt-02"
+              ]
+            },
+            {
+              "when_to_use": "When melting cheese into a sauce rather than simply liquefying it alone.",
+              "strategy": "Warm milk or another sauce liquid in a saucepan over low heat, add the cheese, and whisk continuously over gentle heat until the cheese breaks down and incorporates into a smooth sauce.",
+              "source_task_ids": [
+                "heat-melt-03"
+              ]
+            },
+            {
+              "when_to_use": "When a solid food item is large or whole and needs to melt evenly and quickly, especially chocolate or cheese.",
+              "strategy": "Break, chop, or otherwise reduce the item into smaller pieces before or during heating when possible, then stir or whisk to distribute heat and eliminate remaining lumps.",
+              "source_task_ids": [
+                "heat-melt-02",
+                "heat-melt-03"
+              ]
+            },
+            {
+              "when_to_use": "When a pot of cold water or soup needs to be brought to a rolling/vigorous boil on a stove.",
+              "strategy": "Place the pot securely on a burner, turn the burner to high heat, and wait while maintaining high heat until large bubbles rapidly break across the entire surface. Confirm the boil is sustained before considering the goal complete.",
+              "source_task_ids": [
+                "heat-boil-01",
+                "heat-boil-02"
+              ]
+            },
+            {
+              "when_to_use": "When heating soup or another thicker liquid/mixture on high heat toward a boil.",
+              "strategy": "Stir after it becomes hot or starts bubbling at the edges to distribute heat evenly and reduce the risk of scorching, then continue heating until the whole surface boils vigorously.",
+              "source_task_ids": [
+                "heat-boil-02"
+              ]
+            },
+            {
+              "when_to_use": "When heating milk to a bare simmer without scalding or boiling it over.",
+              "strategy": "Use low heat, stir slowly and frequently, monitor with a thermometer, and watch for tiny bubbles at the edge. Stop heating around 180\u00b0F when faint steam and edge bubbles indicate a bare simmer.",
+              "source_task_ids": [
+                "heat-boil-03"
+              ]
+            },
+            {
+              "when_to_use": "When frying a sunny-side-up egg in a non-stick pan with butter and the goal is set whites with a runny intact yolk.",
+              "strategy": "Heat the pan over medium-low, melt a small pat of butter until foaming but not browned, crack in the egg gently, then cook uncovered without flipping until the whites fully set while the yolk remains runny. Turn off heat promptly to avoid overcooking.",
+              "source_task_ids": [
+                "heat-cook-01"
+              ]
+            },
+            {
+              "when_to_use": "When cooking dry rice on a stovetop in a pot with a lid.",
+              "strategy": "Combine about 1 part rice with 2 parts water in the pot, bring to a boil over high heat, then cover and reduce to low for a gentle simmer. Let it cook until water is mostly absorbed and grains swell, then check tenderness before stopping heat.",
+              "source_task_ids": [
+                "heat-cook-02"
+              ]
+            },
+            {
+              "when_to_use": "When searing a raw steak to medium-rare with a crusted exterior using cast iron or another heavy pan.",
+              "strategy": "Preheat the heavy pan over high heat until very hot, pat the steak dry to prevent steaming, add a thin layer of high-smoke-point oil, then lay the steak flat and leave it undisturbed until a crust forms. Flip once, sear the second side, and remove to rest when it feels springy with some give.",
+              "source_task_ids": [
+                "heat-cook-03"
+              ]
+            },
+            {
+              "when_to_use": "When cooking foods where the desired result depends on controlling heat intensity rather than simply applying maximum heat.",
+              "strategy": "Match burner heat to the cooking goal: use medium-low gentle heat for delicate foods like eggs, boil then reduce to low simmer for absorbent foods like rice, and use very high heat for fast crust formation on steak. Adjust heat at key transitions to avoid burning, sticking, or overcooking.",
+              "source_task_ids": [
+                "heat-cook-01",
+                "heat-cook-02",
+                "heat-cook-03"
+              ]
+            },
+            {
+              "when_to_use": "When the goal is to turn liquid water into solid ice blocks and an ice tray plus freezer are available.",
+              "strategy": "Pour the water into the ice tray, place the filled tray flat in the freezer, close the freezer door to retain cold air, and wait several hours until the water is frozen solid.",
+              "source_task_ids": [
+                "cool-01"
+              ]
+            },
+            {
+              "when_to_use": "When the goal is to chill a warm bottled drink until it is cold to the touch without freezing it.",
+              "strategy": "Put the bottle upright on a refrigerator shelf, close the refrigerator door, wait long enough for chilling, then check by touching the bottle; continue chilling if it is not yet cold.",
+              "source_task_ids": [
+                "cool-02"
+              ]
+            },
+            {
+              "when_to_use": "When a warm, fluid mixture such as chocolate ganache needs to become firm but not icy or frozen.",
+              "strategy": "Spread or pour it into a shallow dish so it cools evenly, refrigerate it flat, check firmness by gently pressing the surface, and extend refrigeration until it is uniformly set and holds its shape.",
+              "source_task_ids": [
+                "cool-03"
+              ]
+            },
+            {
+              "when_to_use": "When combining dry ingredients with liquid to form a uniform dough or paste, especially when salt or another minor dry ingredient must be evenly distributed.",
+              "strategy": "Add the main dry ingredient to the bowl, add and stir in the minor dry ingredient first, then add liquid gradually. Mix thoroughly after each addition, adding only small splashes of extra liquid if dry patches remain, until the mixture comes together uniformly.",
+              "source_task_ids": [
+                "mix-01"
+              ]
+            },
+            {
+              "when_to_use": "When making a uniform liquid mixture from ingredients that may remain visibly separated, such as eggs plus milk.",
+              "strategy": "Put all required liquid ingredients in the bowl before final mixing, then whisk vigorously until visual signs of separation are gone, such as intact yolks, streaks of egg white, or separate pools of liquid.",
+              "source_task_ids": [
+                "mix-02"
+              ]
+            },
+            {
+              "when_to_use": "When trying to combine oil and vinegar into a vinaigrette and no emulsifier such as mustard, egg yolk, or honey is available.",
+              "strategy": "Whisk vinegar while slowly adding oil to create only a temporary emulsion, but do not expect a stable dressing; without an emulsifier, the mixture will separate after sitting.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            }
+          ]
+        },
+        "verdicts": [
+          {
+            "entry_index": 0,
+            "entry": {
+              "when_to_use": "When melting foods that can scorch, separate, or burn easily on a stove, such as butter, chocolate, or cheese.",
+              "strategy": "Use gentle low heat rather than high heat, and give the food time to melt gradually. Keep heating only until it becomes liquid or smooth, avoiding overheating.",
+              "source_task_ids": [
+                "heat-melt-01",
+                "heat-melt-02",
+                "heat-melt-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry correctly targets solid-to-liquid melting of meltable, heat-sensitive foods like butter, chocolate, and cheese, and recommends gentle low heat with stopping once liquid or smooth. Its applicability is bounded to melting, so it would not plausibly fire for boiling, cooking, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 1,
+            "entry": {
+              "when_to_use": "When melting chocolate into a smooth liquid for dipping or coating.",
+              "strategy": "Use indirect gentle heat with a double boiler: simmer a shallow amount of water in a saucepan, place chocolate pieces in a heat-safe bowl above the water without touching it, and stir slowly until glossy and smooth.",
+              "source_task_ids": [
+                "heat-melt-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to melting chocolate into a smooth liquid, a specific heat-melt case where gentle indirect heat is appropriate to avoid scorching. Its applicability would not plausibly trigger for boiling, cooking, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 2,
+            "entry": {
+              "when_to_use": "When melting cheese into a sauce rather than simply liquefying it alone.",
+              "strategy": "Warm milk or another sauce liquid in a saucepan over low heat, add the cheese, and whisk continuously over gentle heat until the cheese breaks down and incorporates into a smooth sauce.",
+              "source_task_ids": [
+                "heat-melt-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to melting cheese into a sauce, a specific heat-melt variant, and uses gentle low heat to melt/incorporate the cheese. Its trigger is narrow enough that it should not fire for boiling, cooling, cooking, or general mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 3,
+            "entry": {
+              "when_to_use": "When a solid food item is large or whole and needs to melt evenly and quickly, especially chocolate or cheese.",
+              "strategy": "Break, chop, or otherwise reduce the item into smaller pieces before or during heating when possible, then stir or whisk to distribute heat and eliminate remaining lumps.",
+              "source_task_ids": [
+                "heat-melt-02",
+                "heat-melt-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry applies specifically to solid meltable food items that need to melt evenly, especially chocolate or cheese, which fits the heat-melt family. The strategy of chopping into smaller pieces and stirring during heating supports even melting and does not suggest inappropriate high heat, cooling, or unrelated mixing-only goals. It is broad enough for close heat-melt variants without plausibly firing on other families because it is bounded by the need to melt a solid food item.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 4,
+            "entry": {
+              "when_to_use": "When a pot of cold water or soup needs to be brought to a rolling/vigorous boil on a stove.",
+              "strategy": "Place the pot securely on a burner, turn the burner to high heat, and wait while maintaining high heat until large bubbles rapidly break across the entire surface. Confirm the boil is sustained before considering the goal complete.",
+              "source_task_ids": [
+                "heat-boil-01",
+                "heat-boil-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to bringing cold water or soup to a rolling/vigorous boil on a stove, and the strategy matches the heat-boil family: pot on burner, high heat, wait for sustained rapid bubbling. It does not plausibly trigger for melting, cooking, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 5,
+            "entry": {
+              "when_to_use": "When heating soup or another thicker liquid/mixture on high heat toward a boil.",
+              "strategy": "Stir after it becomes hot or starts bubbling at the edges to distribute heat evenly and reduce the risk of scorching, then continue heating until the whole surface boils vigorously.",
+              "source_task_ids": [
+                "heat-boil-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is a correct refinement for the heat-boil family, especially soup or thicker boil-tolerant liquids: heat on high toward a boil and stir as it heats to reduce scorching. Its when_to_use is tied to heating toward a boil, so it is unlikely to fire for cooling, mixing, melting, or frying tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 6,
+            "entry": {
+              "when_to_use": "When heating milk to a bare simmer without scalding or boiling it over.",
+              "strategy": "Use low heat, stir slowly and frequently, monitor with a thermometer, and watch for tiny bubbles at the edge. Stop heating around 180\u00b0F when faint steam and edge bubbles indicate a bare simmer.",
+              "source_task_ids": [
+                "heat-boil-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the heat-boil family\u2019s heat-sensitive milk bare-simmer case and gives an appropriate low-heat, monitored strategy to avoid scalding or boil-over. Its when_to_use is narrow enough that it should not trigger for melting, cooling, cooking, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 7,
+            "entry": {
+              "when_to_use": "When frying a sunny-side-up egg in a non-stick pan with butter and the goal is set whites with a runny intact yolk.",
+              "strategy": "Heat the pan over medium-low, melt a small pat of butter until foaming but not browned, crack in the egg gently, then cook uncovered without flipping until the whites fully set while the yolk remains runny. Turn off heat promptly to avoid overcooking.",
+              "source_task_ids": [
+                "heat-cook-01"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the heat-cook egg-frying case and gives an appropriate medium/medium-low heat plus butter strategy for sunny-side-up eggs. Its conditions are specific enough that it would not plausibly trigger for melting, boiling, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 8,
+            "entry": {
+              "when_to_use": "When cooking dry rice on a stovetop in a pot with a lid.",
+              "strategy": "Combine about 1 part rice with 2 parts water in the pot, bring to a boil over high heat, then cover and reduce to low for a gentle simmer. Let it cook until water is mostly absorbed and grains swell, then check tenderness before stopping heat.",
+              "source_task_ids": [
+                "heat-cook-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry gives a correct bounded strategy for the heat-cook family, specifically stovetop rice cooking: add water, bring to boil, reduce to simmer covered, and cook until absorbed/tender. Its when_to_use is narrow enough that it would not plausibly trigger for melting, boiling-only, cooling, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 9,
+            "entry": {
+              "when_to_use": "When searing a raw steak to medium-rare with a crusted exterior using cast iron or another heavy pan.",
+              "strategy": "Preheat the heavy pan over high heat until very hot, pat the steak dry to prevent steaming, add a thin layer of high-smoke-point oil, then lay the steak flat and leave it undisturbed until a crust forms. Flip once, sear the second side, and remove to rest when it feels springy with some give.",
+              "source_task_ids": [
+                "heat-cook-03"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is correct for the steak-searing heat-cook task and would not mislead other families, but the when_to_use is narrowly tied to the exact seen goal: searing a raw steak to medium-rare with a crusted exterior in a heavy pan. It may fail to retrieve for close heat-cook variants such as searing steak to a different doneness or similar pan-searing meat tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 10,
+            "entry": {
+              "when_to_use": "When cooking foods where the desired result depends on controlling heat intensity rather than simply applying maximum heat.",
+              "strategy": "Match burner heat to the cooking goal: use medium-low gentle heat for delicate foods like eggs, boil then reduce to low simmer for absorbent foods like rice, and use very high heat for fast crust formation on steak. Adjust heat at key transitions to avoid burning, sticking, or overcooking.",
+              "source_task_ids": [
+                "heat-cook-01",
+                "heat-cook-02",
+                "heat-cook-03"
+              ]
+            },
+            "label": "over_generalized",
+            "reasoning": "The strategy is broadly sensible for several heat-cook tasks such as eggs, rice, and steak, but the when_to_use condition is too broad: many non-heat-cook tasks also require controlled heat rather than maximum heat, especially melting butter/chocolate/cheese and simmering heat-sensitive liquids. Retrieved there, this entry could suggest inappropriate cooking-specific transitions or high-heat searing/boiling steps.",
+            "affected_families": [
+              "heat-melt",
+              "heat-boil"
+            ]
+          },
+          {
+            "entry_index": 11,
+            "entry": {
+              "when_to_use": "When the goal is to turn liquid water into solid ice blocks and an ice tray plus freezer are available.",
+              "strategy": "Pour the water into the ice tray, place the filled tray flat in the freezer, close the freezer door to retain cold air, and wait several hours until the water is frozen solid.",
+              "source_task_ids": [
+                "cool-01"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to the cool family case of turning liquid water into solid ice using an ice tray and freezer. The strategy matches the required freezing approach and would not plausibly trigger for heating, cooking, boiling, melting, or mixing tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 12,
+            "entry": {
+              "when_to_use": "When the goal is to chill a warm bottled drink until it is cold to the touch without freezing it.",
+              "strategy": "Put the bottle upright on a refrigerator shelf, close the refrigerator door, wait long enough for chilling, then check by touching the bottle; continue chilling if it is not yet cold.",
+              "source_task_ids": [
+                "cool-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to a cooling/chilling goal for a bottled drink without freezing, and the refrigerator strategy would help for that cool-family task without triggering on heat, cook, boil, melt, or mix tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 13,
+            "entry": {
+              "when_to_use": "When a warm, fluid mixture such as chocolate ganache needs to become firm but not icy or frozen.",
+              "strategy": "Spread or pour it into a shallow dish so it cools evenly, refrigerate it flat, check firmness by gently pressing the surface, and extend refrigeration until it is uniformly set and holds its shape.",
+              "source_task_ids": [
+                "cool-03"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to a cooling/setting task: a warm fluid mixture needs to become firm without freezing. The strategy uses refrigeration and checking firmness, which fits the cool family example of setting ganache and would not plausibly trigger heat-melt, heat-boil, heat-cook, or mix tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 14,
+            "entry": {
+              "when_to_use": "When combining dry ingredients with liquid to form a uniform dough or paste, especially when salt or another minor dry ingredient must be evenly distributed.",
+              "strategy": "Add the main dry ingredient to the bowl, add and stir in the minor dry ingredient first, then add liquid gradually. Mix thoroughly after each addition, adding only small splashes of extra liquid if dry patches remain, until the mixture comes together uniformly.",
+              "source_task_ids": [
+                "mix-01"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly scoped to the mix family: combining dry ingredients with liquid into a uniform dough or paste. The strategy uses a bowl/container and gradual stirring/mixing without heat or cooling, and it generalizes beyond the exact flour-water-salt instance to close variants involving minor dry ingredients. It would not plausibly trigger for heat-melt, heat-boil, heat-cook, or cool tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 15,
+            "entry": {
+              "when_to_use": "When making a uniform liquid mixture from ingredients that may remain visibly separated, such as eggs plus milk.",
+              "strategy": "Put all required liquid ingredients in the bowl before final mixing, then whisk vigorously until visual signs of separation are gone, such as intact yolks, streaks of egg white, or separate pools of liquid.",
+              "source_task_ids": [
+                "mix-02"
+              ]
+            },
+            "label": "useful",
+            "reasoning": "The entry is correctly bounded to mix tasks involving uniform liquid mixtures and uses an appropriate bowl-plus-whisk strategy without heat or cooling. It generalizes beyond the exact eggs-and-milk task to close variants with visibly separated liquid ingredients, and it is unlikely to trigger on heat-melt, heat-boil, heat-cook, or cool tasks.",
+            "affected_families": []
+          },
+          {
+            "entry_index": 16,
+            "entry": {
+              "when_to_use": "When trying to combine oil and vinegar into a vinaigrette and no emulsifier such as mustard, egg yolk, or honey is available.",
+              "strategy": "Whisk vinegar while slowly adding oil to create only a temporary emulsion, but do not expect a stable dressing; without an emulsifier, the mixture will separate after sitting.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The entry is relevant to the mix family and would not mislead other families, but its trigger is narrowly tied to the exact oil-and-vinegar vinaigrette case with no emulsifier rather than generalizing to plausible close mixing variants such as other dressings or emulsions.",
+            "affected_families": []
+          }
+        ],
+        "task_sequence": [
+          "heat-melt-01",
+          "heat-boil-01",
+          "heat-cook-01",
+          "cool-01",
+          "mix-01",
+          "heat-melt-02",
+          "heat-boil-02",
+          "heat-cook-02",
+          "cool-02",
+          "mix-02",
+          "heat-melt-03",
+          "heat-boil-03",
+          "heat-cook-03",
+          "cool-03",
+          "mix-03"
+        ],
+        "coverage": {
+          "n_families_total": 5,
+          "n_families_covered": 5,
+          "n_tasks_total": 15,
+          "n_tasks_covered": 15,
+          "missing_families": [],
+          "missing_task_ids": []
+        }
+      },
+      "cumulative": {
+        "arm": "cumulative",
+        "consolidator_model": "gpt-5.5",
+        "judge_model": "gpt-5.5",
+        "final_memory": {
+          "entries": [
+            {
+              "when_to_use": "When trying to make a stable vinaigrette from only oil, vinegar, a bowl, and a whisk, with no emulsifier such as mustard, egg yolk, honey, or similar ingredient available.",
+              "strategy": "Whisk the vinegar while slowly adding the oil to create the best possible temporary emulsion, but recognize that it will separate after standing. Do not expect a truly stable vinaigrette without an emulsifier; add one if stability is required.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            }
+          ]
+        },
+        "verdicts": [
+          {
+            "entry_index": 0,
+            "entry": {
+              "when_to_use": "When trying to make a stable vinaigrette from only oil, vinegar, a bowl, and a whisk, with no emulsifier such as mustard, egg yolk, honey, or similar ingredient available.",
+              "strategy": "Whisk the vinegar while slowly adding the oil to create the best possible temporary emulsion, but recognize that it will separate after standing. Do not expect a truly stable vinaigrette without an emulsifier; add one if stability is required.",
+              "source_task_ids": [
+                "mix-03"
+              ]
+            },
+            "label": "over_specialized",
+            "reasoning": "The strategy is appropriate for the vinaigrette mixing instance and correctly avoids heat/cooling, but the when_to_use is narrowly tied to making vinaigrette from only oil, vinegar, a bowl, and a whisk with no emulsifier. It would not fire for close mix-family variants such as whisking eggs and milk or combining flour, water, and salt, so it is too instance-specific rather than a broadly useful mix-family lesson.",
+            "affected_families": []
+          }
+        ],
+        "task_sequence": [
+          "heat-melt-01",
+          "heat-boil-01",
+          "heat-cook-01",
+          "cool-01",
+          "mix-01",
+          "heat-melt-02",
+          "heat-boil-02",
+          "heat-cook-02",
+          "cool-02",
+          "mix-02",
+          "heat-melt-03",
+          "heat-boil-03",
+          "heat-cook-03",
+          "cool-03",
+          "mix-03"
+        ],
+        "coverage": {
+          "n_families_total": 5,
+          "n_families_covered": 1,
+          "n_tasks_total": 15,
+          "n_tasks_covered": 1,
+          "missing_families": [
+            "cool",
+            "heat-boil",
+            "heat-cook",
+            "heat-melt"
+          ],
+          "missing_task_ids": [
+            "cool-01",
+            "cool-02",
+            "cool-03",
+            "heat-boil-01",
+            "heat-boil-02",
+            "heat-boil-03",
+            "heat-cook-01",
+            "heat-cook-02",
+            "heat-cook-03",
+            "heat-melt-01",
+            "heat-melt-02",
+            "heat-melt-03",
+            "mix-01",
+            "mix-02"
+          ]
+        }
+      }
+    }
+  ],
+  "notes": null
+}

@@ -1,0 +1,22 @@
+[project]
+name = "errornodebench"
+version = "0.1.0"
+description = "A benchmark for failure modes of LLM-driven memory consolidation (Interference, Misgrouping, Overfit)."
+requires-python = ">=3.10"
+dependencies = [
+    "litellm>=1.51.0",
+    "pydantic>=2.7.0",
+    "python-dotenv>=1.0.0",
+    "click>=8.1.0",
+    "rich>=13.7.0",
+]
+
+[project.scripts]
+errornodebench = "errornodebench.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["errornodebench"]

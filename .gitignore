@@ -1,0 +1,33 @@
+# Secrets — never commit the real env
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Virtualenvs / package managers
+.venv/
+venv/
+env/
+uv.lock
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# LaTeX build artifacts (in case a writeup is added later)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc

@@ -1,0 +1,33 @@
+[92m14:32:59 - LiteLLM:WARNING[0m: common_utils.py:979 - litellm: could not pre-load bedrock-runtime response stream shape — Bedrock event-stream decoding will be unavailable. Error: No module named 'botocore'
+[92m14:32:59 - LiteLLM:WARNING[0m: common_utils.py:24 - litellm: could not pre-load sagemaker-runtime response stream shape — SageMaker event-stream decoding will be unavailable. Error: No module named 'botocore'
+[14:32:59]  generating trajectory for heat-01                         cli.py:111
+[14:33:06]  generating trajectory for heat-02                         cli.py:111
+[14:33:14]  generating trajectory for cool-01                         cli.py:111
+[14:33:20]  generating trajectory for mix-01                          cli.py:111
+[14:33:29]  generating trajectory for dissolve-01                     cli.py:111
+[14:33:36]  generating trajectory for evap-01                         cli.py:111
+[14:33:45]  consolidating heat-01                                     cli.py:111
+[14:33:48]  consolidating heat-02                                     cli.py:111
+[14:33:52]  consolidating cool-01                                     cli.py:111
+[14:33:55]  consolidating mix-01                                      cli.py:111
+[14:33:58]  consolidating dissolve-01                                 cli.py:111
+[14:34:01]  consolidating evap-01                                     cli.py:111
+[14:34:04]  consolidating heat-01                                     cli.py:111
+[14:34:08]  consolidating heat-02                                     cli.py:111
+[14:34:14]  consolidating cool-01                                     cli.py:111
+[14:34:20]  consolidating mix-01                                      cli.py:111
+[14:34:30]  consolidating dissolve-01                                 cli.py:111
+[14:34:40]  consolidating evap-01                                     cli.py:111
+[14:34:51]  scoring fresh memory (6 entries)                          cli.py:111
+[14:35:39]  scoring cumulative memory (6 entries)                     cli.py:111
+                         ErrorNodeBench — interference                          
+┏━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━┓
+┃ Arm        ┃ Entries ┃  useful ┃ over_generaliz… ┃ over_specializ… ┃ garbage ┃
+┡━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━┩
+│ fresh      │       6 │ 2 (33%) │          0 (0%) │         4 (67%) │  0 (0%) │
+│ cumulative │       6 │ 5 (83%) │          0 (0%) │         1 (17%) │  0 (0%) │
+└────────────┴─────────┴─────────┴─────────────────┴─────────────────┴─────────┘
+
+Interference signal: fresh bad entries = 0, cumulative bad entries = 0, delta = 
+0
+Saved full result to runs/v1.json
