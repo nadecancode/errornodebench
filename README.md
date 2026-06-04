@@ -293,5 +293,4 @@ Routing uses [litellm](https://github.com/BerriAI/litellm); see
 
 ## License
 
-MIT — see [LICENSE](LICENSE). (Copyright line is a placeholder; edit it to your
-name.)
+MIT — see [LICENSE](LICENSE).
